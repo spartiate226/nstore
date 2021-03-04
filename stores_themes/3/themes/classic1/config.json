@@ -1,0 +1,36 @@
+{
+    "info": {
+        "Author": "Justin",
+        "Name": "Classix",
+        "Version": ""
+     },
+    "customizer": {
+        "sections": {
+
+            "sect1": {
+
+                "settings": {
+
+                    "set1": {
+
+                        "controls": {
+
+                            "ctrl1": {
+                                "type": "",
+                                "default": "",
+                                "value": "",
+                                "opt": []
+                            }
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+}

@@ -1,0 +1,36 @@
+{
+    "info": {
+        "Author": "",
+        "Name": "",
+        "Version": ""
+     },
+    "customizer": {
+        "sections": {
+
+            "sect1": {
+
+                "settings": {
+
+                    "set1": {
+
+                        "controls": {
+
+                            "ctrl1": {
+                                "type": "",
+                                "default": "",
+                                "value": "",
+                                "opt": []
+                            }
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+}
