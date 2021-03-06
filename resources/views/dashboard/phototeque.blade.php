@@ -1,7 +1,7 @@
 @extends('dashboard.layout')
 @section('contenue')
     <div>
-        <form action="" method="POST" enctype="multipart/form-data">
+        <form action="{{url('upload')}}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group row">
                 <input type="number" hidden value="">
@@ -11,16 +11,19 @@
         </form>
     </div>
     <div class="row border-top p-2">
-        <section class="card col-md-3 p-2">
-            <div class="card-body">
-                <div class="card-img">
-                    <img src="">
-                </div>
-                   <h4>nom</h4>
+        @foreach(getMedia(Auth::user()->group->boutique_id) as $media)
+            <div class="col-md-3 p-2">
+                <section class="card">
+                    <div class="card-body">
+                        <div class="card-img">
+                            <img class="w-100" style="height: 300px" src="{{themes_path()->url($media)}}">
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a><i class="fa fa-times"></i></a>
+                    </div>
+                </section>
             </div>
-            <div class="card-footer">
-                <a><i class="fa fa-times"></i></a>
-            </div>
-        </section>
+        @endforeach
     </div>
 @endsection

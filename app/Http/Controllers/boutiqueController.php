@@ -87,4 +87,9 @@ class boutiqueController extends Controller
             return redirect('',404);
         }
     }
+
+    function loadmedia(Request $request){
+        $request->media->store(Auth::user()->group->boutique_id.'/images','themes_path');
+        return redirect('dashboard/phototeque');
+     }
 }

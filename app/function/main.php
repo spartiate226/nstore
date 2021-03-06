@@ -83,7 +83,7 @@ function controlBlock($control,$control_label,$setting_label,$section_label){
             break;
         case "image":
             ?>
-            <input data-control="<?php echo $control_label ?>" data-setting="<?php echo $setting_label ?>" data-section="<?php echo $section_label ?>" class="form-control customizer-field" type="file" accept="image/*">
+            <input data-control="<?php echo $control_label ?>" data-setting="<?php echo $setting_label ?>" data-section="<?php echo $section_label ?>" class="form-control customizer-field" type="file">
 <?php
             break;
         case "list":
@@ -162,3 +162,6 @@ function checkoutForm(){
 
 }
 
+function getMedia($id){
+    return themes_path()->files($id."/images");
+}

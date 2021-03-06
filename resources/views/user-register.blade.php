@@ -1,7 +1,7 @@
 <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#boutiqueform">Ajouter une Utilisateur</button>
 <div class="modal fade" id="boutiqueform">
     <div class="modal-dialog modal-xl">
-        <form action="{{url('addBoutique')}}" method="Post" class="modal-content">
+        <form action="{{url('addUser',["role"=>$role])}}" method="Post" class="modal-content">
             @csrf
             <div class="modal-header">
                 <button class="btn btn-dark" type="submit">Sauvegarder</button>
@@ -28,7 +28,7 @@
                         <section class="row m-0">
                             <div class="form-group col-md p-2">
                                 <label>Numero de téléphone 1</label>
-                                <input class="form-control" name="tel"  type="text" placeholder="numero de telephone">
+                                <input class="form-control" name="numero"  type="text" placeholder="numero de telephone">
                             </div>
                             @if($connect=="logis")
                             <div class="form-group col-md p-2">
@@ -62,7 +62,7 @@
                             @endif
                             <div class="form-group col-md p-2">
                                 <label>Email</label>
-                                <input class="form-control" name="email" type="text" placeholder="Deuxième numero de telephone">
+                                <input class="form-control" name="email" type="text" placeholder="Email">
                             </div>
                         </section>
                     </fieldset>
@@ -130,7 +130,6 @@
                         </thead>
                         <tbody>
                         @foreach($users as $user)
-                            @if($user->role_id!=6 && $user->role_id!=4 && $user->role_id!=2 && $user->role_id!=5)
                    @if($user->pseudonyme!="spartiate")
                         <tr>
                             <td>
@@ -146,7 +145,6 @@
                             <td class="mailbox-attachment">{{$user->zone??"inconnu"}}</td>
                             <td class="mailbox-date"><button class="btn btn-secondary">{{$user->role->nom}}</button></td>
                         </tr>
-                   @endif
                             @endif
                         @endforeach
                         </tbody>

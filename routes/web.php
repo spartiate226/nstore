@@ -14,9 +14,16 @@ use Illuminate\Support\Facades\Route;
 */
 //Route::get('store/{slug}/{page?}','boutiqueController@boutique');
 
+
+
+Route::group(['domain'=>"{store}.mynayamax.com"],function ($store){
+    dd($store);
+});
+
 Route::get('/', function () {
     return view('front.location');
 });
+
 Route::resource('categorie','categoriecontroller');
 Route::resource('produit','produitcontroller');
 Route::post('customizer','customizerController@customizer');
@@ -31,8 +38,8 @@ Route::post('client/login','StoreAuthcontroller@login');
 Route::post('client/register','StoreAuthcontroller@register');
 Route::get('client/logout','StoreAuthcontroller@logout');
 
-Route::get('/mm','Logincontroller@vue');
-
+Route::post('upload','boutiqueController@loadmedia');
+Route::post('addUser/{role}','UserController@store');
 Route::get('changeTheme/{theme}','boutiqueController@changeTheme');
 Route::post('dashboard/upload_theme','boutiqueController@upload_theme');
 Route::post('addBoutique',"boutiqueController@addBoutique")->middleware('Roleverifier:1');
