@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::domain('{slug}.mynayamax.com')->group(function(){
+Route::group(['domain'=>'{slug}.mynayamax.com'],function(){
 
     Route::get('/', function ($slug) {
         dd($slug);
