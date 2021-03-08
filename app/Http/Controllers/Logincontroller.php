@@ -23,7 +23,6 @@ class Logincontroller extends Controller
         return view('auth.vendorlogin');
     }
     function login(Request $request){
-        
      if (Auth::attempt($request->except('_token'))){
          switch (Auth::user()->role_id){
              case 1:
@@ -43,7 +42,7 @@ class Logincontroller extends Controller
 
     function vendorlogin(Request $request){
         if (Auth::attempt($request->except('_token'))){
-            return redirect('admin/login');
+            return redirect('dashboard/dash');
         }else{
             return redirect('admin/login');
         }
