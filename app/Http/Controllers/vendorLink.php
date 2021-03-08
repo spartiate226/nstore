@@ -41,11 +41,11 @@ class vendorLink extends Controller
 
             case "categorielist":
                 $categorie=categorie::where('boutique_id',"=",Auth::user()->boutique->id)->paginate(25);
-                 return view('dashboard.produit.categorie',compact('slug'));
+                 return view('dashboard.produit.categorie',compact('slug','categorie'));
             break;
 
             case "add_prod":
-                return view('dashboard.produit.addprod',compact('slug','categorie'));
+                return view('dashboard.produit.addprod',compact('slug'));
             break;
 
             case "produitlist":
