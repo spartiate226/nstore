@@ -59,7 +59,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{route('categorie.index')}}" class="nav-link">
+                                <a href="{{route('categorie.index',[$slug])}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p style="font-weight:bold">Categories</p>
                                 </a>

@@ -1,7 +1,7 @@
 @extends('dashboard.layout')
 @section('contenue')
     <div class="container">
-        <span id="customizer_url" hidden data-url="{{url('customizer')}}" data-token="{{csrf_token()}}"></span>
+        <span id="customizer_url" hidden data-url="{{url('dashboard/customizer')}}" data-token="{{csrf_token()}}"></span>
         <div class="row">
             @foreach($config->getSections() as $section_label=>$section)
                 <section class="col-md-6 p-1">

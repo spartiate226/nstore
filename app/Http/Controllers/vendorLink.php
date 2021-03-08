@@ -23,7 +23,7 @@ class vendorLink extends Controller
     {
         //$this->middleware('auth');
     }
-    public function __invoke(Request $request,$page,$slug)
+    public function __invoke(Request $request,$slug,$page)
     {
         switch($page){
             case "dash":

@@ -16,7 +16,7 @@
                         </div>
                     </div>
                     <div class="card-body p-2">
-                        <form action="{{route('categorie.store')}}" method="POST">
+                        <form action="{{route('dashboard/categorie.store',[$slug])}}" method="POST">
                             @csrf
                             <div class="form-group">
                                 <label>Nom</label>

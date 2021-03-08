@@ -3,7 +3,7 @@
 
 <div class="row">
 <div class="col-md-12">
-    <form action="{{route('produit.store')}}" enctype="multipart/form-data" method="POST" class="card card-primary card-outline">
+    <form action="{{route('dashboard/produit.store',[$slug])}}" enctype="multipart/form-data" method="POST" class="card card-primary card-outline">
         @csrf
         <div class="card-header">
             <h3 class="card-title">Formulaire</h3>

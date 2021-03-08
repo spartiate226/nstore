@@ -31,11 +31,11 @@ Route::group(['domain'=>'{slug}.mynayamax.com'],function(){
     Route::post('client/register','StoreAuthcontroller@register');
     Route::get('client/logout','StoreAuthcontroller@logout');
 
-    
-    Route::post('customizer','customizerController@customizer')->middleware('Roleverifiervendor');
-    Route::resource('categorie','categoriecontroller')->middleware('Roleverifiervendor');
-    Route::resource('produit','produitcontroller')->middleware('Roleverifiervendor');
-    Route::get('changeTheme/{theme}','boutiqueController@changeTheme')->middleware('Roleverifiervendor');
+
+    Route::post('dashboard/customizer','customizerController@customizer')->middleware('Roleverifiervendor');
+    Route::resource('dashboard/categorie','categoriecontroller')->middleware('Roleverifiervendor');
+    Route::resource('dashboard/produit','produitcontroller')->middleware('Roleverifiervendor');
+    Route::get('dashboard/changeTheme/{theme}','boutiqueController@changeTheme')->middleware('Roleverifiervendor');
     Route::post('dashboard/upload_theme','boutiqueController@upload_theme')->middleware('Roleverifiervendor');
     Route::get('dashboard/{page}',"vendorLink")->middleware('Roleverifiervendor');
 
