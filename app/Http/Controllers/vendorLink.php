@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\categorie;
 use App\module\setting;
 use App\produit;
 use App\User;
@@ -26,7 +27,7 @@ class vendorLink extends Controller
     public function __invoke(Request $request,$slug,$page)
     {
         switch($page){
-            case "dash":
+            case null:
                 return view('dashboard.index',compact('slug'));
             break;
 
@@ -38,15 +39,16 @@ class vendorLink extends Controller
                 return view('dashboard.produit.addcategorie',compact('slug'));
             break;
 
-            case "categorie":
+            case "categorielist":
+                $categorie=categorie::where('boutique_id',"=",Auth::user()->boutique->id)->paginate(25);
                  return view('dashboard.produit.categorie',compact('slug'));
             break;
 
             case "add_prod":
-                return view('dashboard.produit.addprod',compact('slug'));
+                return view('dashboard.produit.addprod',compact('slug','categorie'));
             break;
 
-            case "produit":
+            case "produitlist":
                  $produits=produit::where('boutique_id',"=",Auth::user()->boutique->id)->paginate(25);
                  return view('dashboard.produit.produit',compact('produits','slug'));
             break;

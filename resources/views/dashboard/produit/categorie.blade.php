@@ -16,7 +16,7 @@
                         </div>
                     </div>
                     <div class="card-body p-2">
-                        <form action="{{route('dashboard/categorie.store',[$slug])}}" method="POST">
+                        <form action="{{url('dashboard/categorie')}}" method="POST">
                             @csrf
                             <div class="form-group">
                                 <label>Nom</label>
@@ -32,7 +32,7 @@
             </div>
             <!-- /.col -->
             <div class="col-md-9">
-                <form action="{{route('categorie.destroy',['suppr'])}}" method="POST" class="card card-primary card-outline">
+                <form action="{{url('dashboard/categorie',['suppr'])}}" method="POST" class="card card-primary card-outline">
                     @method('DELETE')
                     @csrf
                     <div class="card-header">

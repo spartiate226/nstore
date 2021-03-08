@@ -36,7 +36,7 @@
                          with font-awesome or any other icon font library -->
 
                     <li class="nav-item">
-                        <a href="{{url('dashboard/dash')}}" class="nav-link">
+                        <a href="{{url('dashboard')}}" class="nav-link">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
                             <p style="font-weight:bold">
                                 Tableau de bord
@@ -53,13 +53,13 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{{url('dashboard/produit')}}" class="nav-link">
+                                <a href="{{url('dashboard/produitlis')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p style="font-weight:bold">Mes produits</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{route('categorie.index',[$slug])}}" class="nav-link">
+                                <a href="{{url('dashboard/categorielist')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p style="font-weight:bold">Categories</p>
                                 </a>

@@ -37,7 +37,7 @@ Route::group(['domain'=>'{slug}.mynayamax.com'],function(){
     Route::resource('dashboard/produit','produitcontroller')->middleware('Roleverifiervendor');
     Route::get('dashboard/changeTheme/{theme}','boutiqueController@changeTheme')->middleware('Roleverifiervendor');
     Route::post('dashboard/upload_theme','boutiqueController@upload_theme')->middleware('Roleverifiervendor');
-    Route::get('dashboard/{page}',"vendorLink")->middleware('Roleverifiervendor');
+    Route::get('dashboard/{page?}',"vendorLink")->middleware('Roleverifiervendor');
 
 });
 

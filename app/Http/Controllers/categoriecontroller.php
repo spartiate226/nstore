@@ -10,16 +10,16 @@ use Illuminate\Support\Facades\Auth;
 class categoriecontroller extends Controller
 {
 
-    public function index()
+    public function index($slug)
     {
         $categorie=Auth::user()->boutique->categorie;
-        return view('dashboard.produit.categorie',compact('categorie'));
+        return view('dashboard.produit.categorie',compact('categorie','slug'));
     }
 
 
-    public function create()
+    public function create($slug)
     {
-        return view('dashboard.produit.categorie');
+        return view('dashboard.produit.categorie',compact('slug'));
     }
 
 

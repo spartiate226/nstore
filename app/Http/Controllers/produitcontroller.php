@@ -13,10 +13,10 @@ class produitcontroller extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($slug)
     {
 
-        return  view('dashboard.produit.produit');
+        return  view('dashboard.produit.produit',compact('slug'));
     }
 
     /**
