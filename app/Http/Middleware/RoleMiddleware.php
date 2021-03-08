@@ -17,7 +17,7 @@ class RoleMiddleware
     public function handle($request, Closure $next,$role)
     {
         if (Auth::check()){
-            if (Auth::user()->role_id!=1 || Auth::user()->role_id!=2){
+            if (Auth::user()->role_id!=1 && Auth::user()->role_id!=2){
                 return redirect('admin/login');
             }
         }else{

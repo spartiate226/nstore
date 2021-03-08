@@ -17,4 +17,7 @@ class boutique extends Model
     function categorie(){
         return $this->hasMany(categorie::class);
     }
+    function commande(){
+        return $this->hasMany(commande::class);
+    }
 }

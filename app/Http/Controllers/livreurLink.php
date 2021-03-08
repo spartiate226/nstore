@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 class livreurLink extends Controller
@@ -25,7 +26,9 @@ class livreurLink extends Controller
     {
         switch ($page){
             case "collaborateur":
-                return view("1livreur.collaborateur");
+                $role_id=2;
+                $users=User::where('role_id','=',2);
+                return view("1livreur.collaborateur",compact('role_id','users'));
                 break;
             case "index":
                 return view("1livreur.index");
@@ -37,7 +40,9 @@ class livreurLink extends Controller
                 return view("1livreur.livraisonmap");
                 break;
             case "livreur":
-                return view("1livreur.livreur");
+                $role_id=4;
+                $users=User::where('role_id','=',4);
+                return view("1livreur.livreur",compact('role_id','users'));
                 break;
             case "notification":
                 return view("1livreur.notification");

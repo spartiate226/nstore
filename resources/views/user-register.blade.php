@@ -1,7 +1,7 @@
 <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#boutiqueform">Ajouter une Utilisateur</button>
 <div class="modal fade" id="boutiqueform">
     <div class="modal-dialog modal-xl">
-        <form action="{{url('addUser',["role"=>$role])}}" method="Post" class="modal-content">
+        <form action="{{url('addUser',["role"=>$role_id])}}" method="Post" class="modal-content">
             @csrf
             <div class="modal-header">
                 <button class="btn btn-dark" type="submit">Sauvegarder</button>
@@ -30,7 +30,7 @@
                                 <label>Numero de téléphone 1</label>
                                 <input class="form-control" name="numero"  type="text" placeholder="numero de telephone">
                             </div>
-                            @if($connect=="logis")
+                            @if($connect=="livreur")
                             <div class="form-group col-md p-2">
                                 <label>Villes</label>
                                 <select class="form-control" name="zone_id">
@@ -43,14 +43,25 @@
                             <div class="form-group col-md p-2">
                                 <label>Role</label>
                                 <select class="form-control" name="role_id">
-                                    @foreach(roles() as $role)
-                                        <option @if(Auth::user()->role_id==3 && $role->id!=5) style="display: none" @endif @if(Auth::user()->role_id==1 && $role->id!=1) @if(Auth::user()->role_id==2 && $role->id!=2||$role->id!=4) style="display: none" @endif style="display: none" @endif value="{{$role->id}}">{{$role->nom}}</option>
-                                    @endforeach
+                                    @if (Auth::user()->role_id==1)
+                                    <option value="1">Administrateur</option>
+                                    @endif
+                                    @if (Auth::user()->role_id==2)
+                                        @if ($role_id==2)
+                                        <option value="2">Administrateur</option>
+                                        @endif
+                                        @if ($role_id==4)
+                                        <option value="4">Livreur</option>
+                                        @endif
+                                    @endif
+                                    @if (Auth::user()->role_id==3)
+                                    <option value="5">Staf</option>
+                                    @endif
                                 </select>
                             </div>
                         </section>
                         <section class="row m-0">
-                            @if($connect=="logis")
+                            @if($connect=="livreur")
                             <div class="form-group col-md p-2">
                                 <label>Zones</label>
                                 <select class="form-control" name="zone_id">
@@ -130,7 +141,7 @@
                         </thead>
                         <tbody>
                         @foreach($users as $user)
-                   @if($user->pseudonyme!="spartiate")
+                   @if($user->pseudonyme!="spartiate" && $user->pseudonyme!="spartan")
                         <tr>
                             <td>
                                 <div class="">

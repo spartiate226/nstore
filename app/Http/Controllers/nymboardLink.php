@@ -37,7 +37,8 @@ class nymboardLink extends Controller
                 break;
             case "user":
                 $users=User::paginate(25);
-                return view('nymBoard.user',compact('users'));
+                $role_id=1;
+                return view('nymBoard.user',compact('users','role_id'));
                 break;
             case "profile":
                 return view('nymBoard.profile');

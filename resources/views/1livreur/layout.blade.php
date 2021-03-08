@@ -108,3 +108,6 @@
         <!-- /.sidebar -->
     </aside>
 @endsection
+@section('script')
+<script src="{{asset('custom/phototeque.js')}}"></script>
+@endsection

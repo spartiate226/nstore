@@ -42,6 +42,7 @@
             @endforeach
         </div>
     </div>
+    @include('media')
 @endsection
 @section('script')
     <script src="{{asset('custom/customizer.js')}}"></script>

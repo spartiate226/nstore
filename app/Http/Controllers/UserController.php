@@ -6,7 +6,8 @@ use App\role;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 class UserController extends Controller
 {
     /**
@@ -38,6 +39,8 @@ class UserController extends Controller
     public function store(Request $request,$role)
     {
         $donne=$request->all();
+        $donne['pseudonyme']=$request->numero;
+        $donne['password']=Hash::make(Str::random(8));
         if ($request->role_id==3 || $request->role_id==5){
             $donne['storegroup_id']=Auth::user()->group->id;
         }

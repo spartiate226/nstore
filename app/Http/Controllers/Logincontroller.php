@@ -23,6 +23,7 @@ class Logincontroller extends Controller
         return view('auth.vendorlogin');
     }
     function login(Request $request){
+        
      if (Auth::attempt($request->except('_token'))){
          switch (Auth::user()->role_id){
              case 1:

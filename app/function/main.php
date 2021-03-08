@@ -77,12 +77,12 @@ function controlBlock($control,$control_label,$setting_label,$section_label){
     switch ($control->type){
         case "text":
             ?>
-        <input data-control="<?php echo $control_label ?>" data-setting="<?php echo $setting_label ?>" data-section="<?php echo $section_label ?>" class="form-control customizer-field" type="text" value="<?php echo $control->default?>">
+        <input data-control="<?php echo $control_label ?>" data-setting="<?php echo $setting_label ?>" data-section="<?php echo $section_label ?>" class="form-control customizer-field" type="text" value="<?php echo $control->value?>">
 <?php
             break;
         case "image":
             ?>
-            <input data-control="<?php echo $control_label ?>" data-setting="<?php echo $setting_label ?>" data-section="<?php echo $section_label ?>" class="form-control customizer-field" type="file">
+            <input data-control="<?php echo $control_label ?>" value="<?php echo $control->value?>" data-setting="<?php echo $setting_label ?>" data-section="<?php echo $section_label ?>" class="form-control customizer-field" type="text" data-toggle="modal" data-target="#exampleModal" class="mediaSelector">
 <?php
             break;
         case "list":

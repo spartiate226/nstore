@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\boutique;
 use App\categorie;
 use App\module\setting;
 use App\produit;
@@ -24,7 +25,7 @@ class vendorLink extends Controller
     {
         //$this->middleware('auth');
     }
-    public function __invoke(Request $request,$slug,$page)
+    public function __invoke(Request $request,$slug,$page,$store_id)
     {
         switch($page){
             case null:
@@ -32,7 +33,9 @@ class vendorLink extends Controller
             break;
 
             case "commande":
-                return view('dashboard.livraison.livaison',compact('slug'));
+                $boutique=boutique::find($store_id);
+                $commandes=$boutique->commande->paginate(10);
+                return view('dashboard.livraison.livaison',compact('slug','commandes'));
             break;
 
             case "add_categorie":
@@ -70,8 +73,9 @@ class vendorLink extends Controller
             break;
 
             case "user":
+                $role_id=3;
                 $users=User::where('storegroup_id',"=",Auth::user()->group->id)->paginate(25);
-                return view('dashboard.utilisateur.utilisateur',compact('users','slug'));
+                return view('dashboard.utilisateur.utilisateur',compact('users','slug','role_id'));
             break;
 
             case "profile":

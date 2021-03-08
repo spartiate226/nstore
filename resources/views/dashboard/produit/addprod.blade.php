@@ -54,25 +54,26 @@
                 <div class="form-group col-md">
                     <div class="btn btn-default btn-file">
                         <i class="fas fa-paperclip"></i> Photo couverture
-                        <input type="file" name="image1">
+                        <input type="text" name="image1"  data-toggle="modal" data-target="#exampleModal" class="mediaSelector">
                     </div>
                     <p class="help-block">Max. 300kb</p>
                 </div>
                 <div class="form-group col-md">
                     <div class="btn btn-default btn-file">
                         <i class="fas fa-paperclip"></i> Photo de detail
-                        <input type="file" name="image2">
+                        <input type="text" name="image2"  data-toggle="modal" data-target="#exampleModal" class="mediaSelector">
                     </div>
                     <p class="help-block">Max. 300kb</p>
                 </div>
                 <div class="form-group col-md">
                     <div class="btn btn-default btn-file">
                         <i class="fas fa-paperclip"></i> Photo de detail
-                        <input type="file" name="image3">
+                        <input type="text" name="image3"  data-toggle="modal" data-target="#exampleModal" class="mediaSelector">
                     </div>
                     <p class="help-block">Max. 300kb</p>
                 </div>
             </section>
+            @include('media')
         </div>
         <!-- /.card-body -->
         <div class="card-footer">

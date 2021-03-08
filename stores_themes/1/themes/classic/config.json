@@ -1,7 +1,8 @@
 {
     "info": {
-        "Author": "",
-        "version": ""
+       "Author": "",
+        "Name": "",
+        "Version": ""
      },
     "customizer": {
         "sections": {
@@ -16,7 +17,6 @@
 
                             "ctrl1": {
                                 "type": "",
-                                "default": "",
                                 "value": "",
                                 "opt": []
                             }
