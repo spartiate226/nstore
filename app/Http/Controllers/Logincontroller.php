@@ -19,6 +19,9 @@ class Logincontroller extends Controller
     function vue(){
         return view('auth.login');
     }
+    function vendorvue(){
+        return view('auth.vendorlogin');
+    }
     function login(Request $request){
      if (Auth::attempt($request->except('_token'))){
          switch (Auth::user()->role_id){
@@ -28,9 +31,6 @@ class Logincontroller extends Controller
              case 2:
                  return redirect('1livreur/index');
                  break;
-             case 3:
-                 return redirect('dashboard/dash');
-                 break;
              default:
                  return redirect('admin/login');
                  break;
@@ -39,7 +39,20 @@ class Logincontroller extends Controller
          return redirect('admin/login');
      }
     }
+
+    function vendorlogin(Request $request){
+        if (Auth::attempt($request->except('_token'))){
+            return redirect('admin/login');
+        }else{
+            return redirect('admin/login');
+        }
+       }
     function logout(){
+        Auth::logout();
+        return redirect('admin/login');
+    }
+
+    function vendorlogout(){
         Auth::logout();
         return redirect('admin/login');
     }

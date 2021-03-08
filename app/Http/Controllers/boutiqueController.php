@@ -74,19 +74,7 @@ class boutiqueController extends Controller
         }
     }
 
-    function boutique($slug,$page=null){
-        $boutique=boutique::where('slug',"=",$slug)->get();
-        if ($boutique){
-            session(['boutique_id'=>$boutique[0]->id]);
-            if ($page==null){
-                return redirect('page/index');
-            }else{
-                return redirect('page/'.$page);
-            }
-        }else{
-            return redirect('',404);
-        }
-    }
+    
 
     function loadmedia(Request $request){
         $request->media->store(Auth::user()->group->boutique_id.'/images','themes_path');

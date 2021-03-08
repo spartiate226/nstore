@@ -18,22 +18,26 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['domain'=>'{slug}.mynayamax.com'],function(){
 
-   
+    Route::get('admin/login',"Logincontroller@vendorvue");
+    Route::post('admin/login',"Logincontroller@vendorlogin");
+    Route::get('admin/logout',"Logincontroller@vendorlogout");
 
     Route::get('/{page?}',"storeLink");
-    Route::resource('categorie','categoriecontroller');
-    Route::resource('produit','produitcontroller');
-    Route::post('customizer','customizerController@customizer');
-    Route::get('admin/login',"Logincontroller@vue");
+
     Route::get('addItem',"cartController@add");
     Route::get('delItem',"cartController@delete");
     Route::get('erasecart',"cartController@destroy");
     Route::post('client/login','StoreAuthcontroller@login');
     Route::post('client/register','StoreAuthcontroller@register');
     Route::get('client/logout','StoreAuthcontroller@logout');
-    Route::get('changeTheme/{theme}','boutiqueController@changeTheme');
-    Route::post('dashboard/upload_theme','boutiqueController@upload_theme');
-    Route::get('dashboard/{page}',"vendorLink")->middleware('Roleverifier:3');
+
+    
+    Route::post('customizer','customizerController@customizer')->middleware('Roleverifiervendor');
+    Route::resource('categorie','categoriecontroller')->middleware('Roleverifiervendor');
+    Route::resource('produit','produitcontroller')->middleware('Roleverifiervendor');
+    Route::get('changeTheme/{theme}','boutiqueController@changeTheme')->middleware('Roleverifiervendor');
+    Route::post('dashboard/upload_theme','boutiqueController@upload_theme')->middleware('Roleverifiervendor');
+    Route::get('dashboard/{page}',"vendorLink")->middleware('Roleverifiervendor');
 
 });
 
@@ -41,7 +45,7 @@ Route::get('/', function () {
     return view('front.location');
 });
 
-
+Route::get('admin/login',"Logincontroller@vue");
 Route::post('admin/login',"Logincontroller@login");
 Route::get('admin/logout',"Logincontroller@logout");
 

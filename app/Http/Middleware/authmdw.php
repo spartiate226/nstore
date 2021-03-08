@@ -3,9 +3,8 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Illuminate\Support\Facades\Auth;
 
-class RoleMiddleware
+class authmdw
 {
     /**
      * Handle an incoming request.
@@ -14,10 +13,10 @@ class RoleMiddleware
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next,$role)
+    public function handle($request, Closure $next)
     {
         if (Auth::check()){
-            if (Auth::user()->role_id!=1 || Auth::user()->role_id!=2){
+            if (Auth::user()->role_id!=3){
                 return redirect('admin/login');
             }
         }else{

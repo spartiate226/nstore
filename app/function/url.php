@@ -41,9 +41,7 @@ function template_page($page,$store,$that){
     }
 }
 
-function page_url($url){
-return url('store/'.session('slug').'/'.$url);
-}
+
 
 function store_url($choice,$id){
     switch ($choice){
