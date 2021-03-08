@@ -18,9 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['domain'=>'{slug}.mynayamax.com'],function(){
 
-    Route::get('/', function ($slug) {
-        dd($slug);
-    });
+   
 
     Route::get('/{page?}',"storeLink");
     Route::resource('categorie','categoriecontroller');

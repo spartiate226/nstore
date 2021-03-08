@@ -49,8 +49,7 @@ function market_path(){
 function themes_path(){
    return Storage::disk('themes_path');
 }
-function template_path($fil){
-    $boutique=\App\boutique::find(session('boutique_id'));
+function template_path($fil,$boutique){
     if (!themes_path()->exists($boutique->id.'/themes/'.$boutique->template->template.'/'.$fil.'.php')){
         echo '<h1>Not found</h1>';
     }

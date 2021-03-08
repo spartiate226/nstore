@@ -23,36 +23,36 @@ class vendorLink extends Controller
     {
         //$this->middleware('auth');
     }
-    public function __invoke(Request $request,$page)
+    public function __invoke(Request $request,$page,$slug)
     {
         switch($page){
             case "dash":
-                return view('dashboard.index');
+                return view('dashboard.index',compact('slug'));
             break;
 
             case "commande":
-                return view('dashboard.livraison.livaison');
+                return view('dashboard.livraison.livaison',compact('slug'));
             break;
 
             case "add_categorie":
-                return view('dashboard.produit.addcategorie');
+                return view('dashboard.produit.addcategorie',compact('slug'));
             break;
 
             case "categorie":
-                 return view('dashboard.produit.categorie');
+                 return view('dashboard.produit.categorie',compact('slug'));
             break;
 
             case "add_prod":
-                return view('dashboard.produit.addprod');
+                return view('dashboard.produit.addprod',compact('slug'));
             break;
 
             case "produit":
                  $produits=produit::where('boutique_id',"=",Auth::user()->boutique->id)->paginate(25);
-                 return view('dashboard.produit.produit',compact('produits'));
+                 return view('dashboard.produit.produit',compact('produits','slug'));
             break;
 
             case "market":
-                 return view('dashboard.theme.market');
+                 return view('dashboard.theme.market',compact('slug'));
             break;
 
             case "upload_theme":
@@ -60,23 +60,23 @@ class vendorLink extends Controller
             break;
             case "customizer":
                 $config=new setting(Auth::user()->boutique);
-                return view('dashboard.theme.customizer',compact('config'));
+                return view('dashboard.theme.customizer',compact('config','slug'));
                 break;
 
             case "add_user":
-                 return view('dashboard.utilisateur.add');
+                 return view('dashboard.utilisateur.add',compact('slug'));
             break;
 
             case "user":
                 $users=User::where('storegroup_id',"=",Auth::user()->group->id)->paginate(25);
-                return view('dashboard.utilisateur.utilisateur',compact('users'));
+                return view('dashboard.utilisateur.utilisateur',compact('users','slug'));
             break;
 
             case "profile":
-                 return view('dashboard.utilisateur.profile');
+                 return view('dashboard.utilisateur.profile',compact('slug'));
             break;
             case "phototeque":
-                return view('dashboard.phototeque');
+                return view('dashboard.phototeque',compact('slug'));
                 break;
 
         }

@@ -36,7 +36,7 @@
                          with font-awesome or any other icon font library -->
 
                     <li class="nav-item">
-                        <a href="{{url('dashboard/dash')}}" class="nav-link">
+                        <a href="{{url('dashboard/dash',[$slug])}}" class="nav-link">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
                             <p style="font-weight:bold">
                                 Tableau de bord
@@ -53,19 +53,19 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{{url('dashboard/produit')}}" class="nav-link">
+                                <a href="{{url('dashboard/produit',[$slug])}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p style="font-weight:bold">Mes produits</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{route('categorie.index')}}" class="nav-link">
+                                <a href="{{route('categorie.index',[$slug])}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p style="font-weight:bold">Categories</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{url('dashboard/livraison')}}" class="nav-link">
+                                <a href="{{url('dashboard/livraison',[$slug])}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p style="font-weight:bold">commandes</p>
                                 </a>
@@ -74,7 +74,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="{{url('dashboard/user')}}" class="nav-link">
+                        <a href="{{url('dashboard/user',[$slug])}}" class="nav-link">
                             <i class="nav-icon fas fa-users"></i>
                             <p style="font-weight:bold">
                                 Utlisateurs
@@ -95,7 +95,7 @@
                             {{--                    </a>--}}
                             {{--                </li>--}}
                             <li class="nav-item">
-                                <a href="{{url('dashboard/user')}}" class="nav-link">
+                                <a href="{{url('dashboard/user',[$slug])}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Membres</p>
                                 </a>
@@ -103,7 +103,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a href="{{url('dashboard/')}}" class="nav-link">
+                        <a href="{{url('dashboard/',[$slug])}}" class="nav-link">
                             <i class="nav-icon fas fa-edit"></i>
                             <p>
                                 Apparences
@@ -112,19 +112,19 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{{url('dashboard/market')}}" class="nav-link">
+                                <a href="{{url('dashboard/market',[$slug])}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Theme market</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{url('dashboard/upload_theme')}}" class="nav-link">
+                                <a href="{{url('dashboard/upload_theme',[$slug])}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Uploader un theme</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{url('dashboard/customizer')}}" class="nav-link">
+                                <a href="{{url('dashboard/customizer',[$slug])}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Pesonnalisation</p>
                                 </a>
@@ -132,7 +132,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a href="{{url('dashboard/phototeque')}}" class="nav-link">
+                        <a href="{{url('dashboard/phototeque',[$slug])}}" class="nav-link">
                             <i class="nav-icon fa fa-film"></i>
                             <p>
                                 Media
