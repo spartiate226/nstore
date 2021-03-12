@@ -14,8 +14,8 @@
             @foreach (getMedia(Auth::user()->group->boutique_id) as $image)
             <div class="col-md-3 p-1">
                 <div>
-                    <img src="{{themes_path()->url($media)}}" style="width: 100%;height:150px">
-                    <button class="mediafile btn btn-secondary w-100 mt-1" data-dismiss="modal" data-path="{{themes_path()->url($media)}}">choisir</button>
+                    <img src="{{themes_path()->url($image)}}" style="width: 100%;height:150px">
+                    <button class="mediafile btn btn-secondary w-100 mt-1" data-dismiss="modal" data-path="{{themes_path()->url($image)}}">choisir</button>
                 </div>
             </div>
             @endforeach

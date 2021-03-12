@@ -82,7 +82,7 @@ function controlBlock($control,$control_label,$setting_label,$section_label){
             break;
         case "image":
             ?>
-            <input data-control="<?php echo $control_label ?>" value="<?php echo $control->value?>" data-setting="<?php echo $setting_label ?>" data-section="<?php echo $section_label ?>" class="form-control customizer-field" type="text" data-toggle="modal" data-target="#exampleModal" class="mediaSelector">
+            <input data-control="<?php echo $control_label ?>" value="<?php echo $control->value?>" data-setting="<?php echo $setting_label ?>" data-section="<?php echo $section_label ?>" class="mediaSelector form-control customizer-field" type="text" data-toggle="modal" data-target="#exampleModal">
 <?php
             break;
         case "list":

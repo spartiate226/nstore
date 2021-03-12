@@ -1,4 +1,12 @@
 <!DOCTYPE html>
+
+
+<div class="loader d-flex  justify-content-center">
+    <section class="h-100 d-flex flex-column justify-content-center">
+     <img src="{{asset('nayamax_logo.png')}}" style="width:50px;height:50px">
+    </section>
+ </div>
+ 
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">

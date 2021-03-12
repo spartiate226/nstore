@@ -53,7 +53,7 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{{url('dashboard/produitlis')}}" class="nav-link">
+                                <a href="{{url('dashboard/produitlist')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p style="font-weight:bold">Mes produits</p>
                                 </a>

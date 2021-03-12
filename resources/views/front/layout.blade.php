@@ -4,7 +4,7 @@
     <title></title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
-
+    <link rel="stylesheet" href="{{asset('assets/css/stylecust.css')}}">
 </head>
 <body class="h-100">
  <div class="h-100 p-1">
