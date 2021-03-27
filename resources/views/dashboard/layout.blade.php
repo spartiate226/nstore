@@ -36,7 +36,7 @@
                          with font-awesome or any other icon font library -->
 
                     <li class="nav-item">
-                        <a href="{{url('dashboard')}}" class="nav-link">
+                        <a href="{{url('dashboard/dash')}}" class="nav-link">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
                             <p style="font-weight:bold">
                                 Tableau de bord
@@ -65,7 +65,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{url('dashboard/livraison')}}" class="nav-link">
+                                <a href="{{url('dashboard/commande')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p style="font-weight:bold">commandes</p>
                                 </a>
@@ -139,6 +139,31 @@
                             </p>
                         </a>
                     </li>
+
+                    <li class="nav-item">
+                        <a href="3" class="nav-link">
+                            <i class="nav-icon fas fa-money"></i>
+                            <p>
+                                Retraits
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{url('dashboard/demande_retrait')}}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Faire un retrait</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{url('dashboard/historique_retrait')}}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Historiques</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
                     <li class="nav-item">
                         <a href="{{url('admin/logout')}}" class="nav-link">
                             <i class="nav-icon fas fa-sign-out-alt"></i>

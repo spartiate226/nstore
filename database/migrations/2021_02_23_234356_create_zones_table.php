@@ -15,6 +15,8 @@ class CreateZonesTable extends Migration
     {
         Schema::create('zones', function (Blueprint $table) {
             $table->id();
+            $table->string('nom');
+            $table->integer('ville_id');
             $table->timestamps();
         });
     }

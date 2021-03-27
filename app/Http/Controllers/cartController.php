@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
 
 class cartController extends Controller
 {
     public function add(Request $request)
     {
-        if (session()->exists("panier-" . $request->boutique_id)) {
+        if (session()->exists("panier-". $request->boutique_id)) {
 
             if (session()->exists("panier-" . $request->boutique_id . ".prod-" . $request->id)) {
                 $prod = session("panier-" . $request->boutique_id . ".prod-" . $request->id);
@@ -20,11 +21,16 @@ class cartController extends Controller
             }
 
         } else {
-            session(["panier-" . $request->boutique_id => ['boutique_id'=>$request->boutique_id]]);
+            session(["panier-". $request->boutique_id => []]);
 
-            session()->put("panier-" . $request->boutique_id . ".prod-" . $request->id, ["id" => $request->id, "quantite" => $request->quantite]);
+            session()->put("panier-". $request->boutique_id . ".prod-" . $request->id, ["id" => $request->id, "quantite" => $request->quantite]);
         }
-        return redirect()->back()->with(['rrponse'=>'ok']); //->json(["reponse" => session('panier-' . $request->boutique_id)]);
+        if($request->ajax()){
+            return Response()->json(['reponse'=>'ok']);
+        }else{
+            return redirect()->back()->with(['reponse'=>'ok']);
+        }
+
     }
 
     public function destroy(Request $request)

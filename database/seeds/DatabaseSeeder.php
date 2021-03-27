@@ -1,5 +1,6 @@
 <?php
 
+use App\transactionType;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,5 +15,8 @@ class DatabaseSeeder extends Seeder
         $this->call(RoleSeeder::class);
         $this->call(UserSeeder::class);
         $this->call(fonctionnaliteSeeder::class);
+        $this->call(livraisonstatutSeeder::class);
+        $this->call(transactionType::class);
+        $this->call(retraitTypeSeeder::class);
     }
 }

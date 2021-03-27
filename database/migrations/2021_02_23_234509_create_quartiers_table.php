@@ -15,6 +15,8 @@ class CreateQuartiersTable extends Migration
     {
         Schema::create('quartiers', function (Blueprint $table) {
             $table->id();
+            $table->string('nom');
+            $table->integer('zone_id');
             $table->timestamps();
         });
     }

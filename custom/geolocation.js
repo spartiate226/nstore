@@ -10,23 +10,19 @@ $(function () {
         navigator.geolocation.getCurrentPosition(function (position) {
             long.val(position.coords.longitude);
             lat.val(position.coords.latitude);
-            $('#en-cours').text('Precis de '+position.coords.accuracy+" m");
-          $('#accuracy').text(position.coords.accuracy);
+            $('#en-cours').text('Localisé(é) avec une precision de '+position.coords.accuracy+" m");
         }, function (error) {
-
+            console.log(error);
+            $('#en-cours').text('Erreur lors de la localisation.Reessayez!');
         },{
             enableHighAccuracy:true,
+            timeout:15000
         });
     }
     }
 
 $('#start').click(function(){
-    $('#loader').css({display:"block"});
     $('#en-cours').text('En cours...');
-
-    setInterval(function(){
-        $('#loader').css({display:"none"});
-    },15000);
    gps();
 });
 

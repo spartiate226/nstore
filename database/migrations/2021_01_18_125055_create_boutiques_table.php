@@ -19,6 +19,7 @@ class CreateBoutiquesTable extends Migration
             $table->string('slug');
             $table->string('tel1');
             $table->string('tel2');
+            $table->integer('quartier_id');
             $table->integer('user_id');
             $table->integer('pack_id');
             $table->timestamps();

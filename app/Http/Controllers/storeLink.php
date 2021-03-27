@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\boutique;
 use Illuminate\Http\Request;
 use App\module\Store;
+use App\pays;
 
 class storeLink extends Controller
 {
@@ -14,7 +15,7 @@ class storeLink extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function __invoke(Request $request,$slug,$page=null)
+    public function __invoke(Request $request,$slug,$page=null,$params=null)
     {
         $boutique=boutique::where('slug',"=",$slug)->get();
         if ($boutique){
@@ -35,7 +36,8 @@ class storeLink extends Controller
                 return view('front.product',compact('store','that'));
                 break;
             case "single":
-                return view('front.single',compact('store','that'));
+                $id=$params;
+                return view('front.single',compact('store','that','id'));
                 break;
             case "login":
                 return view('front.login',compact('store','that'));
@@ -47,7 +49,8 @@ class storeLink extends Controller
                 return view('front.cart',compact('store','that'));
                 break;
             case "checkout":
-                return view('front.checkout',compact('store','that'));
+                $pays=pays::all();
+                return view('front.checkout',compact('store','that','pays'));
                 break;
              case "page":
                 return view('front.page',compact('store','that'));

@@ -1,7 +1,6 @@
 $(function () {
-$field=$('.customizer-field');
-$field.blur(function () {
-    console.log('ajax');
+var field=$('.customizer-field');
+field.blur(function () {
 $.post($('#customizer_url').attr('data-url'),
        {'val':$(this).val(),
         '_token':$('#customizer_url').attr('data-token'),

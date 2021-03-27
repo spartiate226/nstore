@@ -95,18 +95,18 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
                                    @foreach($categorie as $categorie)
+                                   <tr>
                                         <td>
-                                            <div class="icheck-primary">
+                                            <div class="">
                                                 <input type="checkbox" name="cat{{$categorie->id}}" value="{{$categorie->id}}" id="check1">
                                                 <label for="check1"></label>
                                             </div>
                                         </td>
                                         <td class="mailbox-star">{{$categorie->nom}}</td>
                                         <td class="mailbox-name"><a href="read-mail.html"></a></td>
+                                    </tr>
                                     @endforeach
-                                </tr>
                                 </tbody>
                             </table>
                             <!-- /.table -->

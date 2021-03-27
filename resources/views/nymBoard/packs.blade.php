@@ -46,36 +46,6 @@
                 </div>
             </div>
 
-
-
-        <table class="table table-bordered table-light mt-4">
-            <thead>
-            <tr>
-                <th>N°</th>
-                <th>Nom</th>
-                <th>Nombre abonnés</th>
-                <th>Fonctionalités</th>
-                <th>Action</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            </tbody>
-            <tfoot>
-            <tr>
-                <th>N°</th>
-                <th>Nom</th>
-                <th>Nombre abonnés</th>
-                <th>Fonctionalités</th>
-                <th>Action</th>
-            </tr>
-            </tfoot>
-        </table>
     </div>
 
 
@@ -84,7 +54,7 @@
         <div class="col-md-12">
             <div class="card card-primary card-outline">
                 <div class="card-header">
-                    <h3 class="card-title">Comptes</h3>
+                    <h3 class="card-title">Packs</h3>
 
                     <div class="card-tools">
                         <div class="input-group input-group-sm">
@@ -130,10 +100,6 @@
                                 <th></th>
                                 <th>Nom</th>
                                 <th>prix</th>
-                                <th></th>
-                                <th>Email</th>
-                                <th>Zone</th>
-                                <th>Role</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -145,12 +111,8 @@
                                                 <label for="check1"></label>
                                             </div>
                                         </td>
-                                        <td class="mailbox-star"></td>
-                                        <td class="mailbox-star"></td>
-                                        <td class="mailbox-name"></td>
-                                        <td class="mailbox-subject"></td>
-                                        <td class="mailbox-attachment"></td>
-                                        <td class="mailbox-date"><button class="btn btn-secondary"></button></td>
+                                        <td class="mailbox-star">{{$pack->nom}}"</td>
+                                        <td class="mailbox-star">{{$pack->prix}}"</td>
                                     </tr>
                             @endforeach
                             </tbody>

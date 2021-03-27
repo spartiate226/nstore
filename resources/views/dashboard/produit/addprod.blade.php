@@ -105,4 +105,5 @@
       });
     })
   </script>
+  <script src="{{asset('custom/phototeque.js')}}"></script>
 @endsection

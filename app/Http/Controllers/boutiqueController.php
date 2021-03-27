@@ -21,12 +21,11 @@ class boutiqueController extends Controller
     }
     function addBoutique(Request $request){
         $donneB=$request->except(['nom','_token','prenom','email','numero']);
-        $donneP=$request->except(['bnom','_token','tel1','tel2','pack_id']);
+        $donneP=$request->except(['bnom','_token','tel1','tel2','pack_id','slug','quartier_id']);
         $donneP['role_id']=3;
         $proprietaire=User::create($donneP);
         if($proprietaire){
             $donneB['user_id']=$proprietaire->id;
-            $donneB['slug']=Str::slug($donneB['bnom']);
             $boutique=boutique::create($donneB);
             $group=storegroup::create([
                 "boutique_id"=>$boutique->id,
@@ -74,7 +73,7 @@ class boutiqueController extends Controller
         }
     }
 
-    
+
 
     function loadmedia(Request $request){
         $request->media->store(Auth::user()->group->boutique_id.'/images','themes_path');

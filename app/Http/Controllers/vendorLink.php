@@ -33,9 +33,9 @@ class vendorLink extends Controller
             break;
 
             case "commande":
-                $boutique=boutique::find($store_id);
-                $commandes=$boutique->commande->paginate(10);
-                return view('dashboard.livraison.livaison',compact('slug','commandes'));
+                $boutique=boutique::find(Auth::user()->group->boutique->id);
+                $commandes=$boutique->commande;
+                return view('dashboard.livraison.livraison',compact('slug','commandes'));
             break;
 
             case "add_categorie":
@@ -83,6 +83,12 @@ class vendorLink extends Controller
             break;
             case "phototeque":
                 return view('dashboard.phototeque',compact('slug'));
+                break;
+            case "demande_retrait":
+                return view('dashboard.retrait.demande',compact('slug'));
+                break;
+            case "historique_retrait":
+                return view('dashboard.retrait.historique',compact('slug'));
                 break;
 
         }

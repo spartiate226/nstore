@@ -14,18 +14,17 @@ class customizerController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('Roleverifier:3');
+
     }
 
     function customizer(Request $request)
     {
-        $setting = new setting(Auth::user()->boutique);
+        $setting = new setting(Auth::user()->group->boutique);
         $config = $setting->getConfig();
         $setting->control($request->control, $request->setting, $request->section)->value = $request->val;
-
-        if ($request->ajax()) {
-            themes_path()->put(Auth::user()->boutique->id.'/themes/'.Auth::user()->boutique->template->template.'/config.json',json_encode( $config) );
-           // return response()->json('true');
+       if ($request->ajax()) {
+           themes_path()->put(Auth::user()->boutique->id.'/themes/'.Auth::user()->boutique->template->template.'/config.json',json_encode( $config) );
+           //return response()->json('true');
         }
     }
 }

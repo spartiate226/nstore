@@ -32,10 +32,10 @@
                             </div>
                             @if($connect=="livreur")
                             <div class="form-group col-md p-2">
-                                <label>Villes</label>
+                                <label>Zones</label>
                                 <select class="form-control" name="zone_id">
-                                    @foreach(packs() as $pack)
-                                        <option value="{{$pack->id}}">{{$pack->nom}}</option>
+                                    @foreach(zones() as $zone)
+                                        <option value="{{$zone->id}}">{{$zone->nom}}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -61,16 +61,6 @@
                             </div>
                         </section>
                         <section class="row m-0">
-                            @if($connect=="livreur")
-                            <div class="form-group col-md p-2">
-                                <label>Zones</label>
-                                <select class="form-control" name="zone_id">
-                                    @foreach(packs() as $pack)
-                                        <option value="{{$pack->id}}">{{$pack->nom}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            @endif
                             <div class="form-group col-md p-2">
                                 <label>Email</label>
                                 <input class="form-control" name="email" type="text" placeholder="Email">

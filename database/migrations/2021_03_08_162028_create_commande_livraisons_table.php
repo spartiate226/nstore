@@ -16,7 +16,7 @@ class CreateCommandeLivraisonsTable extends Migration
         Schema::create('commande_livraisons', function (Blueprint $table) {
             $table->id();
             $table->integer('commande_id');
-            $table->string('statut');
+            $table->string('livraison_statut_id');
             $table->timestamps();
         });
     }

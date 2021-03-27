@@ -41,7 +41,8 @@ class livreurLink extends Controller
                 break;
             case "livreur":
                 $role_id=4;
-                $users=User::where('role_id','=',4);
+                $users=User::where('role_id','=',4)->paginate(30);
+
                 return view("1livreur.livreur",compact('role_id','users'));
                 break;
             case "notification":

@@ -6,7 +6,7 @@ function image_url($url){
 
 }
 
-function template_page($page,$store,$that){
+function template_page($page,$store,$that,$params=null){
 
     switch ($page){
         case "frontpage" :

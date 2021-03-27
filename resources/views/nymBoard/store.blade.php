@@ -18,11 +18,14 @@
                                 <h3 class="border-bottom">Boutique</h3>
                                 <section class="row m-0">
 
-                                    <div class="form-group col-md-12 p-2">
+                                    <div class="form-group col-md-6 p-2">
                                         <label>Nom de la boutique</label>
                                         <input class="form-control" name="bnom" type="text" placeholder="Indiquer le nom de la boutique">
                                     </div>
-
+                                    <div class="form-group col-md-6 p-2">
+                                        <label>slug</label>
+                                        <input class="form-control" name="slug" type="text" placeholder="Indiquer le nom utiliser pour le lien(ex:slug.mynayamax.com)">
+                                    </div>
                                 </section>
                                 <section class="row m-0">
                                     <div class="form-group col-md-6 p-2">
@@ -35,11 +38,19 @@
                                     </div>
                                 </section>
                                 <section class="row m-0">
-                                    <div class="form-group col-md-12 p-2">
+                                    <div class="form-group col-md-6 p-2">
                                         <label>Pack initial</label>
                                         <select class="form-control" name="pack_id">
                                             @foreach(packs() as $pack)
                                                 <option value="{{$pack->id}}">{{$pack->nom}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-6 p-2">
+                                        <label>Quartier</label>
+                                        <select class="form-control" name="quartier_id">
+                                            @foreach(quartiers() as $quartier)
+                                                <option value="{{$quartier->id}}">{{$quartier->nom}}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -146,7 +157,7 @@
                                     </td>
                                     <td class="mailbox-star">{{$boutique->bnom}}</td>
                                     <td class="mailbox-subject"></td>
-                                    <td class="mailbox-name"><a href="{{url('store/'.$boutique->slug)}}">{{url('store/'.$boutique->slug)}}</a></td>
+                                    <td class="mailbox-name"><a href="{{url('https://'.$boutique->slug.".mynayamax.test")}}">{{'https://'.$boutique->slug.".mynayamax.test"}}</a></td>
                                     <td class="mailbox-subject"></td>
                                     <td class="mailbox-attachment"></td>
                                     <td class="mailbox-subject"></td>

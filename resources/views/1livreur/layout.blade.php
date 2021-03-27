@@ -91,6 +91,43 @@
                         </ul>
                     </li>
 
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-copy"></i>
+                            <p>
+                                Localites
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{url('1livreur/pays')}}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Pays</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{url('1livreur/villes')}}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Villes</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{url('1livreur/zones')}}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Zones</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{url('1livreur/quartiers')}}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Quartier</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
                     <li class="nav-item">
                         <a href="{{url('admin/logout')}}" class="nav-link">
                             <i class="nav-icon fas fa-tachometer-alt"></i>

@@ -28,9 +28,9 @@ class categoriecontroller extends Controller
         $donne=$request->all();
         $donne['boutique_id']=Auth::user()->boutique->id;
         if (categorie::create($donne)){
-            return redirect()->route('categorie.index')->with('reponse','Enregistrer avec succès!!');
+            return redirect('dashboard/categorielist')->with('reponse','Enregistrer avec succès!!');
         }else{
-            return redirect()->route('categorie.index')->with('reponse','Erreur inconnu...');
+            return redirect('dashboard/categorielist')->with('reponse','Erreur inconnu...');
         }
     }
 
@@ -74,13 +74,13 @@ class categoriecontroller extends Controller
      * @param  \App\categorie  $categorie
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request,$categorie)
+    public function destroy(Request $request)
     {
         $cat=$request->except(['_method','_token']);
         foreach ($cat as $cat){
             $catego=categorie::find($cat);
             $catego->delete();
         }
-        return redirect()->route('categorie.index')->with('reponse','Suppression excutée');
+        return redirect('dashboard/categorielist')->with('reponse','Suppression excutée');
     }
 }

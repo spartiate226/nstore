@@ -147,7 +147,7 @@ function RegisterForm(){
             <input id="register-pwd-field" name="password" class="form-control" style="">
         </div>
         <div class="form-group" style="">
-            <label id="register-confirm-pwd-label" class="" style="">Confirmer lr mot de passe</label>
+            <label id="register-confirm-pwd-label" class="" style="">Confirmer le mot de passe</label>
             <input id="register-confirm-pwd-field" name="password-confirm" class="form-control" style="">
         </div>
         <div class="form-group" style="">
@@ -163,4 +163,20 @@ function checkoutForm(){
 
 function getMedia($id){
     return themes_path()->files($id."/images");
+}
+
+
+function villes(){
+    return \App\ville::all();
+}
+function zones(){
+    return \App\zone::all();
+}
+function quartiers(){
+    return \App\quartier::all();
+}
+
+
+function pays(){
+    return \App\pays::all();
 }

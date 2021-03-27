@@ -33,14 +33,14 @@ class produitcontroller extends Controller
     public function store(Request $request)
     {
         $donne=$request->all();
-        $donne['image1']=$request->image1->store(Auth::user()->boutique->id.'/images','themes_path');
-        $donne['image2']=$request->image2->store(Auth::user()->boutique->id.'/images','themes_path');
-        $donne['image3']=$request->image3->store(Auth::user()->boutique->id.'/images','themes_path');
+        $donne['image1']=$request->image1;
+        $donne['image2']=$request->image2;
+        $donne['image3']=$request->image3;
         $donne['boutique_id']=Auth::user()->group->boutique->id;
         if (produit::create($donne)){
-             return redirect()->route('produit.index')->with('reponse','Enregistrer avec succès!!');
+             return redirect('dashboard/produitlist')->with('reponse','Enregistrer avec succès!!');
         }else{
-             return redirect()->route('produit.index')->with('reponse','Erreur inconnu...');
+             return redirect('dashboard/produitlist')->with('reponse','Erreur inconnu...');
         }
     }
 

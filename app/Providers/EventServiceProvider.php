@@ -2,6 +2,12 @@
 
 namespace App\Providers;
 
+use App\Events\onportefeuillechange;
+use App\Events\onretraitStatechange;
+use App\Events\ontransaction;
+use App\Listeners\onportefeuillechangeListener;
+use App\Listeners\onretraitStatechangeListener;
+use App\Listeners\ontransactionListener;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -17,6 +23,15 @@ class EventServiceProvider extends ServiceProvider
     protected $listen = [
         Registered::class => [
             SendEmailVerificationNotification::class,
+        ],
+        ontransaction::class=>[
+            ontransactionListener::class,
+        ],
+        onretraitStatechange::class=>[
+            onretraitStatechangeListener::class,
+        ],
+        onportefeuillechange::class=>[
+            onportefeuillechangeListener::class,
         ],
     ];
 
