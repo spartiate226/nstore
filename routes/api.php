@@ -17,3 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post('signup',"ClientApiController@signup");
+Route::post('new-locate',"ClientApiController@AddmyLocate");
+Route::get('locations',"ClientApiController@");
+Route::get('dellocation',"ClientApiController@DelmyLocate");
+Route::post('verificator',"ClientApiController@");
+Route::get('pays',"ClientApiController@getPays");
+Route::get('ville',"ClientApiController@ville");

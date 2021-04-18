@@ -13,7 +13,7 @@ class ProduitRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,15 +24,15 @@ class ProduitRequest extends FormRequest
     public function rules()
     {
         return [
-            'nom'=>"required|integer",
+            'nom'=>"required",
             'prix'=>"required|integer",
             'categorie_id'=>"required|integer",
             'prix_promo'=>"required|integer",
-            'disponibilite'=>"required|integer",
-            'description'=>"required|integer",
-            'image1'=>"required|image",
-            'image2'=>"required|image",
-            'image3'=>"required|image",
+            'disponibilite'=>"required",
+            'description'=>"required",
+            'image1'=>"required",
+            'image2'=>"required",
+            'image3'=>"required",
         ];
     }
 }

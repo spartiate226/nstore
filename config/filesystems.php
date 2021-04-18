@@ -54,7 +54,12 @@ return [
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
         ],
-
+        'livreur_photo' => [
+            'driver' => 'local',
+            'root' => base_path('livreur_photo'),
+            'url' => env('APP_URL').'/livreur_photo',
+            'visibility' => 'public',
+        ],
         'themes_path' => [
             'driver' => 'local',
             'root' => base_path('stores_themes'),

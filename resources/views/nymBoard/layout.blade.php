@@ -75,9 +75,33 @@
                     {{--                            </p>--}}
                     {{--                        </a>--}}
                     {{--                    </li>--}}
+
+                    <li class="nav-item">
+                        <a href="3" class="nav-link">
+                            <i class="nav-icon fas fa-money"></i>
+                            <p>
+                                Demandes de retraits
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{url('nym/demande_retrait')}}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Demandes actuelles</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{url('nym/historique_retrait')}}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Historiques</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                     <li class="nav-item">
                         <a href="{{url('admin/logout')}}" class="nav-link">
-                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <i class="nav-icon fas fa-signout"></i>
                             <p>
                                 Deconnexion
                             </p>

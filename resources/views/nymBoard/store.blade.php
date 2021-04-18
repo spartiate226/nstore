@@ -17,7 +17,6 @@
                             <fieldset class="card p-2">
                                 <h3 class="border-bottom">Boutique</h3>
                                 <section class="row m-0">
-
                                     <div class="form-group col-md-6 p-2">
                                         <label>Nom de la boutique</label>
                                         <input class="form-control" name="bnom" type="text" placeholder="Indiquer le nom de la boutique">
@@ -30,11 +29,11 @@
                                 <section class="row m-0">
                                     <div class="form-group col-md-6 p-2">
                                         <label>Numero de téléphone 1</label>
-                                        <input class="form-control" name="tel1"  type="text" placeholder="numero de telephone">
+                                        <input class="form-control" name="tel1"  type="text" placeholder="Numero de telephone 1">
                                     </div>
                                     <div class="form-group col-md-6 p-2">
                                         <label>Numero de téléphone 2</label>
-                                        <input class="form-control" name="tel2" type="text" placeholder="Deuxième numero de telephone">
+                                        <input class="form-control" name="tel2" type="text" placeholder="Numero de telephone 2">
                                     </div>
                                 </section>
                                 <section class="row m-0">
@@ -58,20 +57,24 @@
                             </fieldset>
                             <fieldset class="card p-2">
                                 <h3 class="border-bottom">Proprietaire</h3>
+                                <div class="form-group p-2">
+                                    <label>Pseudonyme</label>
+                                    <input class="form-control" name="pseudonyme" type="text" placeholder="Pseudonyme">
+                                </div>
                                 <section class="row m-0">
                                     <div class="form-group col-md-6 p-2">
                                         <label>Nom</label>
-                                        <input class="form-control" name="nom" type="text" placeholder="numero de telephone">
+                                        <input class="form-control" name="nom" type="text" placeholder="Nom">
                                     </div>
                                     <div class="form-group col-md-6 p-2">
                                         <label>Prenom</label>
-                                        <input class="form-control" name="prenom" type="text" placeholder="Deuxième numero de telephone">
+                                        <input class="form-control" name="prenom" type="text" placeholder="Prenom">
                                     </div>
                                 </section>
                                 <section class="row m-0">
                                     <div class="form-group col-md-6 p-2">
                                         <label>Numero de téléphone</label>
-                                        <input class="form-control" name="numero" type="text" placeholder="numero de telephone">
+                                        <input class="form-control" name="numero" type="text" placeholder="Numero de telephone">
                                     </div>
                                     <div class="form-group col-md-6 p-2">
                                         <label>Email</label>

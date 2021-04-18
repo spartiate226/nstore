@@ -64,6 +64,8 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'Roleverifier'=>\App\Http\Middleware\RoleMiddleware::class,
-        'Roleverifiervendor'=>\App\Http\Middleware\authmdw::class
+        'Roleverifiervendor'=>\App\Http\Middleware\authmdw::class,
+        'isnayamax'=>\App\Http\Middleware\isnayamax::class,
+        'isshop'=>\App\Http\Middleware\isshop::class
     ];
 }

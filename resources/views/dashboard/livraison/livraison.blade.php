@@ -60,6 +60,7 @@
                         </thead>
                         <tbody>
 
+                        @foreach ($commandes as $commande)
                         <tr>
                             <td>
                                 <div class="icheck-primary">
@@ -68,20 +69,32 @@
                                 </div>
                             </td>
 {{--                                <td class="mailbox-star"></td>--}}
-                            <td class="mailbox-name"></td>
-                            <td class="mailbox-subject"></td>
-                            <td class="mailbox-attachment"></td>
-                            <td class="mailbox-date"></td>
-                            <td class="mailbox-name"></td>
-                            <td class="mailbox-subject"></td>
-                            <td class="mailbox-attachment"></td>
+                            <td class="mailbox-name">{{$commande->client_nom}}</td>
+                            <td class="mailbox-subject">{{$commande->client_prenom}}</td>
+                            <td class="mailbox-attachment">
+                               <ul>
+                                @foreach (json_decode($commande->produit) as $produit)
+                                   <li>
+                                       <span>{{json_decode($produit)->quantite}}</span>
+                                       <span>{{App\produit::find(json_decode($produit)->id)->nom}}</span>
+                                       :
+                                       <span>{{json_decode($produit)->total}} Fcfa</span>
+                                   </li>
+                                @endforeach
+                               </ul>
+                            </td>
+                            <td class="mailbox-date">{{$commande->total}} Fcfa</td>
+                            <td class="mailbox-name">@if ($commande->statut_paiment=="En cours") Non @elseif($commande->statut_paiment=="Reglée") Oui  @endif</td>
+                            <td class="mailbox-subject">{{App\quartier::find($commande->quartier_id)->nom}}</td>
+                            <td class="mailbox-attachment">{{$commande->created_at}}</td>
                             <td class="mailbox-date">
-                                <div>
-                                    <a href="{{url('dashboard/Asklivraison')}}" class="btn btn-warning">Demande Livraison</a>
-                                    <a href="{{url('dashboard/LivraisonDetail')}}" class="btn btn-warning">Détails</a>
+                                <div class="">
+                                    <a href="{{url('dashboard/Asklivraison',["commande"=>$commande->id])}}" class=" m-1 btn btn-warning">Demande Livraison</a>
+                                    <a href="{{url('dashboard/LivraisonDetail')}}" class=" m-1 btn btn-warning">Détails</a>
                                 </div>
                             </td>
                         </tr>
+                        @endforeach
 
                         </tbody>
                     </table>

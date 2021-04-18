@@ -22,7 +22,7 @@ class livreurLink extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function __invoke(Request $request,$page)
+    public function __invoke(Request $request,$pseudo,$page)
     {
         switch ($page){
             case "collaborateur":
@@ -50,6 +50,12 @@ class livreurLink extends Controller
                 break;
             case "profile":
                 return view('1livreur.profile');
+                break;
+            case "demande_retrait":
+                return view('1livreur.retrait.demande');
+                break;
+            case "historique_retrait":
+                return view('1livreur.retrait.historique');
                 break;
         }
     }

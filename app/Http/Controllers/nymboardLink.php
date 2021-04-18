@@ -19,7 +19,7 @@ class nymboardLink extends Controller
     {
         //$this->middleware('auth');
     }
-    public function __invoke(Request $request,$page)
+    public function __invoke(Request $request,$pseudo,$page)
     {
         switch ($page){
             case "boutique":
@@ -42,6 +42,12 @@ class nymboardLink extends Controller
                 break;
             case "profile":
                 return view('nymBoard.profile');
+                break;
+            case "demande_retrait":
+                return view('nymBoard.retrait.demande');
+                break;
+            case "historique_retrait":
+                return view('nymBoard.retrait.historique');
                 break;
 
         }

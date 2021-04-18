@@ -17,7 +17,7 @@ class CreatePortefeuilleStatesTable extends Migration
             $table->id();
             $table->integer('portefeuille_id');
             $table->integer('portefeuille_montant')->nullable();
-            $table->date('fin');
+            $table->date('fin')->nullable();
             $table->timestamps();
         });
     }

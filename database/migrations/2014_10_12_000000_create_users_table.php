@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->integer('storegroup_id')->nullable();
             $table->string('nom');
             $table->string('prenom');
+            $table->string('photo')->nullable();
             $table->string('pseudonyme')->nullable();
             $table->string('numero')->unique();
             $table->string('email')->unique()->nullable();

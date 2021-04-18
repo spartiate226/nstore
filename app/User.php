@@ -43,4 +43,7 @@ class User extends Authenticatable
   function group(){
         return $this->belongsTo(storegroup::class,'storegroup_id','id');
   }
+  function zone(){
+    return $this->belongsTo(zone::class);
+  }
 }

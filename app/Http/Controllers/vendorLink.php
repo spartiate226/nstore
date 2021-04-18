@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\boutique;
 use App\categorie;
+use App\commande;
 use App\module\setting;
 use App\produit;
 use App\User;
@@ -33,8 +34,7 @@ class vendorLink extends Controller
             break;
 
             case "commande":
-                $boutique=boutique::find(Auth::user()->group->boutique->id);
-                $commandes=$boutique->commande;
+                $commandes=commande::where('boutique_id',"=",Auth::user()->group->boutique->id)->paginate(25);
                 return view('dashboard.livraison.livraison',compact('slug','commandes'));
             break;
 

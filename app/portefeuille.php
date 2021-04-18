@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class portefeuille extends Model
 {
-    //
+    protected $guarded=[];
 }

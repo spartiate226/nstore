@@ -1,7 +1,7 @@
 <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#boutiqueform">Ajouter une Utilisateur</button>
 <div class="modal fade" id="boutiqueform">
     <div class="modal-dialog modal-xl">
-        <form action="{{url('addUser',["role"=>$role_id])}}" method="Post" class="modal-content">
+        <form action="{{url('addUser',["role"=>$role])}}" method="Post" class="modal-content" enctype="multipart/form-data">
             @csrf
             <div class="modal-header">
                 <button class="btn btn-dark" type="submit">Sauvegarder</button>
@@ -65,6 +65,12 @@
                                 <label>Email</label>
                                 <input class="form-control" name="email" type="text" placeholder="Email">
                             </div>
+                            @if($connect=="livreur")
+                            <div class="form-group col-md p-2">
+                                <label>Photo</label>
+                                <input class="form-control" name="photo" type="file" placeholder="Photo">
+                            </div>
+                            @endif
                         </section>
                     </fieldset>
                 </div>
@@ -143,7 +149,7 @@
                             <td class="mailbox-star">{{$user->prenom}}</td>
                             <td class="mailbox-name">{{$user->numero}}</td>
                             <td class="mailbox-subject">{{$user->email??"pas de mail"}}</td>
-                            <td class="mailbox-attachment">{{$user->zone??"inconnu"}}</td>
+                            <td class="mailbox-attachment">{{$user->zone->nom?? "inconnu"}}</td>
                             <td class="mailbox-date"><button class="btn btn-secondary">{{$user->role->nom}}</button></td>
                         </tr>
                             @endif

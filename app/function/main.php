@@ -39,7 +39,7 @@ function getfilename($path){
 }
 
 function list_themes($store_id){
-    return themes_path()->allDirectories(($store_id.'/themes'));
+    return themes_path()->directories($store_id.'/themes');
 }
 
 function market_path(){
@@ -82,8 +82,38 @@ function controlBlock($control,$control_label,$setting_label,$section_label){
             break;
         case "image":
             ?>
-            <input data-control="<?php echo $control_label ?>" value="<?php echo $control->value?>" data-setting="<?php echo $setting_label ?>" data-section="<?php echo $section_label ?>" class="mediaSelector form-control customizer-field" type="text" data-toggle="modal" data-target="#exampleModal">
-<?php
+            <input id="<?php echo $section_label ?>trigrer" data-control="<?php echo $control_label ?>" value="<?php echo $control->value?>" data-setting="<?php echo $setting_label ?>" data-section="<?php echo $section_label ?>" class="mediaSelector form-control customizer-field" type="text" data-toggle="modal"  data-target="#<?php echo $section_label ?>target">
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="<?php echo $section_label ?>target" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Phototèque</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body row">
+                            <?php
+                            foreach (getMedia(Auth::user()->group->boutique_id) as $image){
+                                ?>
+                            <div class="col-md-3 p-1">
+                                <div>
+                                    <img src="<?php echo themes_path()->url($image)?>" style="width: 100%;height:150px">
+                                    <button class="mediafile btn btn-secondary w-100 mt-1" data-dismiss="modal" data-trig="<?php echo $section_label ?>trigrer"  data-path="<?php echo themes_path()->url($image)?>">choisir</button>
+                                </div>
+                            </div>
+                                 <?php
+                            }
+                            ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <?php
             break;
         case "list":
             ?>

@@ -27,10 +27,14 @@ class onportefeuillechangeListener
     public function handle($event)
     {
         $portefeuille=$event->portefeuille;
-        $oldstate=$portefeuille->state;
-        $oldstate->update(['fin'=>now()]);
+
+        if($portefeuille->state){
+            $oldstate=$portefeuille->state;
+            $oldstate->update(['fin'=>now()]);
+        }
         $newstate=portefeuilleState::create([
-            'portefeuille_id'=>$portefeuille->id
+            'portefeuille_id'=>$portefeuille->id,
+            'portefeuille_montant'=>0
         ]);
         $portefeuille->update(['portefeuille_state_id'=>$newstate->id]);
     }

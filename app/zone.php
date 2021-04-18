@@ -10,6 +10,9 @@ class zone extends Model
     function quartiers(){
         return $this->hasMany(quartier::class);
     }
+    function livreurs(){
+        return $this->hasMany(User::class);
+    }
     function ville(){
         return $this->belongsTo(ville::class);
     }

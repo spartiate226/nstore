@@ -24,7 +24,7 @@ class CategorieRequest extends FormRequest
     public function rules()
     {
         return [
-            'nom'=>"Required",
+            'nom'=>"required|string",
         ];
     }
 }

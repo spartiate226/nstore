@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\boutique;
+use App\boutiqueAnnexe;
+use App\Events\onportefeuillechange;
+use App\portefeuille;
 use App\storeActiveTemplate;
 use App\storegroup;
 use App\User;
@@ -17,10 +20,10 @@ class boutiqueController extends Controller
 
     public function __construct()
     {
-        //$this->middleware('auth');
+
     }
     function addBoutique(Request $request){
-        $donneB=$request->except(['nom','_token','prenom','email','numero']);
+        $donneB=$request->except(['nom','_token','prenom','email','numero','pseudonyme']);
         $donneP=$request->except(['bnom','_token','tel1','tel2','pack_id','slug','quartier_id']);
         $donneP['role_id']=3;
         $proprietaire=User::create($donneP);
@@ -32,12 +35,19 @@ class boutiqueController extends Controller
                 "proprietaire_id"=>$proprietaire->id
             ]);
             if ($boutique){
-                $pass=Str::random(8);
-                $pseudo=Str::random(2).$proprietaire->id.Str::random(3);
+
+                $portefeuille=portefeuille::create([
+                    'portefeuille_state_id'=>1,
+                    'boutique_id'=>$boutique->id,
+                    'montant'=>0
+                ]);
+
+                event(new onportefeuillechange($portefeuille));
+
+                $pass="password";
                 $proprietaire->update([
                     "storegroup_id"=>$group->id,
                     "password"=>Hash::make($pass),
-                    "pseudonyme"=>$pseudo,
                 ]);
                 Storage::disk('themes_path')->makeDirectory($boutique->id.'/themes');
                 Storage::disk('themes_path')->makeDirectory($boutique->id.'/images');
@@ -78,5 +88,12 @@ class boutiqueController extends Controller
     function loadmedia(Request $request){
         $request->media->store(Auth::user()->group->boutique_id.'/images','themes_path');
         return redirect('dashboard/phototeque');
+     }
+
+     function addAnnexe(Request $request){
+         $donn=$request->all();
+         $donn['boutique_id']=Auth::user()->group->boutique->id;
+         boutiqueAnnexe::create($donn);
+         return redirect('dashboard/dash');
      }
 }

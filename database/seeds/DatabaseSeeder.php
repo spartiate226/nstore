@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
         $this->call(UserSeeder::class);
         $this->call(fonctionnaliteSeeder::class);
         $this->call(livraisonstatutSeeder::class);
-        $this->call(transactionType::class);
+        $this->call(transactionTypeSeeder::class);
         $this->call(retraitTypeSeeder::class);
     }
 }

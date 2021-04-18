@@ -16,16 +16,16 @@ class CreateCommandesTable extends Migration
         Schema::create('commandes', function (Blueprint $table) {
             $table->id();
             $table->integer('boutique_id');
+            $table->string('code');
             $table->string('client_nom');
             $table->string('client_prenom');
             $table->string('quartier_id');
             $table->string('client_tel');
             $table->text('description');
-            $table->string('typepaiement');
-            $table->integer('livreur_id');
+            $table->integer('livreur_id')->nullable();
             $table->integer('total');
             $table->string('statut_paiment');
-            $table->string('commande_livraison_id');
+            $table->string('commande_livraison_id')->nullable();
             $table->text('produit');
             $table->text('coordonne');
             $table->timestamps();

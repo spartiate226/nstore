@@ -1,7 +1,7 @@
 
 
   <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="{{$target}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -15,7 +15,7 @@
             <div class="col-md-3 p-1">
                 <div>
                     <img src="{{themes_path()->url($image)}}" style="width: 100%;height:150px">
-                    <button class="mediafile btn btn-secondary w-100 mt-1" data-dismiss="modal" data-path="{{themes_path()->url($image)}}">choisir</button>
+                    <button class="mediafile btn btn-secondary w-100 mt-1" data-dismiss="modal" data-trig="{{$trigger}}"  data-path="{{themes_path()->url($image)}}">choisir</button>
                 </div>
             </div>
             @endforeach

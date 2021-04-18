@@ -45,6 +45,9 @@ class UserController extends Controller
         if ($request->role_id==3 || $request->role_id==5){
             $donne['storegroup_id']=Auth::user()->group->id;
         }
+        if ($request->role_id==4){
+            $donne['photo']=$request->photo->store('livreur_photo','livreur_photo');
+        }
         User::create($donne);
         switch ($role){
             case 1:

@@ -29,18 +29,18 @@ class ontransactionListener
         if($event->transactionArray['type']==1){
             $transaction=transaction::create(['commande_id'=>$event->transactionArray['commande'],
             'portefeuille_state_id'=>$event->transactionArray['portefeuille_state'],
-            'transaction_type_id'=>$event->transactionArray['transaction_type'],]);
+            'transaction_type_id'=>$event->transactionArray['type'],]);
         }
         if($event->transactionArray['type']==2){
             $transaction=transaction::create([
             'retrait_id'=>$event->transactionArray['retrait'],
-            'transaction_type_id'=>$event->transactionArray['transaction_type'],]);
+            'transaction_type_id'=>$event->transactionArray['type'],]);
         }
         if($event->transactionArray['type']==3){
             $transaction=transaction::create([
                 'commande_id'=>$event->transactionArray['commande'],
             'portefeuille_state_id'=>$event->transactionArray['portefeuille_state'],
-            'transaction_type_id'=>$event->transactionArray['transaction_type'],
+            'transaction_type_id'=>$event->transactionArray['type'],
             ]);
         }
     }
