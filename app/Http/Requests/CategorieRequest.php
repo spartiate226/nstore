@@ -24,7 +24,13 @@ class CategorieRequest extends FormRequest
     public function rules()
     {
         return [
-            'nom'=>"required|string",
+            'nom'=>"required",
+        ];
+    }
+    public  function messages()
+    {
+        return [
+            "nom.required"=>"le champ Nom est requis"
         ];
     }
 }

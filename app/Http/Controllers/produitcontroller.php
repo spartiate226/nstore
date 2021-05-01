@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProduitRequest;
 use App\produit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -30,7 +31,7 @@ class produitcontroller extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(ProduitRequest $request)
     {
         $donne=$request->all();
         $donne['image1']=$request->image1;
@@ -40,7 +41,7 @@ class produitcontroller extends Controller
         if (produit::create($donne)){
              return redirect('dashboard/produitlist')->with('reponse','Enregistrer avec succès!!');
         }else{
-             return redirect('dashboard/produitlist')->with('reponse','Erreur inconnu...');
+             return redirect('dashboard/produitlist')->with('erreur','Erreur inconnu...');
         }
     }
 

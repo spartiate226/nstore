@@ -16,7 +16,15 @@ class CreatePacksTable extends Migration
         Schema::create('packs', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
-            $table->string('prix');
+            $table->integer('prix');
+            $table->integer('expiration');
+            $table->integer('compte');
+            $table->integer('theme');
+            $table->string('traduction_manuelle');
+            $table->string('traduction_auto');
+            $table->string('rapport');
+            $table->string('livraison_externe');
+            $table->string('livraison_express');
             $table->timestamps();
         });
     }

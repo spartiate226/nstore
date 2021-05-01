@@ -2,6 +2,7 @@
 @section('contenue')
     <div>
         <form action="{{url('upload')}}" method="POST" enctype="multipart/form-data">
+            @include('alertpane')
             @csrf
             <div class="form-group row">
                 <input type="number" hidden value="">
@@ -20,7 +21,11 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        <a><i class="fa fa-times"></i></a>
+                        <form class="d-inline" action="{{url('delmedia')}}" method="POST">
+                            @csrf
+                            <input hidden type="text" name="media" value="{{$media}}">
+                            <button title="Supprimer" type="submit" class="text-danger btn"><i class="fa fa-times"></i></button>
+                        </form>
                     </div>
                 </section>
             </div>

@@ -3,7 +3,6 @@
 
     <div class="row">
             <div class="col-md-3">
-                <a href="compose.html" class="btn btn-primary btn-block mb-3">Retour</a>
 
                 <div class="card">
                     <div class="card-header">
@@ -16,6 +15,7 @@
                         </div>
                     </div>
                     <div class="card-body p-2">
+                        @include('alertpane')
                         <form action="{{url('dashboard/categorie')}}" method="POST">
                             @csrf
                             <div class="form-group">

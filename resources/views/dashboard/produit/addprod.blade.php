@@ -9,6 +9,7 @@
             <h3 class="card-title">Formulaire</h3>
         </div>
         <!-- /.card-header -->
+        @include('alertpane')
         <div class="card-body">
             <section class="row m-0">
                 <div class="form-group col-md-12">
@@ -54,21 +55,21 @@
                 <div class="form-group col-md">
                     <div class="btn btn-default btn-file">
                         <i class="fas fa-paperclip"></i> Photo couverture
-                        <input type="text" name="image1" id="img1"  data-toggle="modal" data-target="#img1dialog" class="mediaSelector">
+                        <input readonly type="text" name="image1" id="img1"  data-toggle="modal" data-target="#img1dialog" class="mediaSelector">
                     </div>
                     <p class="help-block">Max. 300kb</p>
                 </div>
                 <div class="form-group col-md">
                     <div class="btn btn-default btn-file">
                         <i class="fas fa-paperclip"></i> Photo de detail
-                        <input type="text" name="image2" id="img2"  data-toggle="modal" data-target="#img2dialog" class="mediaSelector">
+                        <input readonly type="text" name="image2" id="img2"  data-toggle="modal" data-target="#img2dialog" class="mediaSelector">
                     </div>
                     <p class="help-block">Max. 300kb</p>
                 </div>
                 <div class="form-group col-md">
                     <div class="btn btn-default btn-file">
                         <i class="fas fa-paperclip"></i> Photo de detail
-                        <input type="text" name="image3" id="img3"  data-toggle="modal" data-target="#img3dialog" class="mediaSelector">
+                        <input readonly type="text" name="image3" id="img3"  data-toggle="modal" data-target="#img3dialog" class="mediaSelector">
                     </div>
                     <p class="help-block">Max. 300kb</p>
                 </div>

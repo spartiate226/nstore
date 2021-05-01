@@ -17,8 +17,9 @@ class CreateRetraitsTable extends Migration
             $table->id();
             $table->integer('boutique_id')->nullable();
             $table->integer('livreur_id')->nullable();
-            $table->integer('retrait_type_id');
+            $table->integer('retrait_type_id')->nullable();
             $table->integer('montant');
+            $table->integer('moyen');
             $table->timestamps();
         });
     }

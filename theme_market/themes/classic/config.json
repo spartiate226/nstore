@@ -1,0 +1,48 @@
+{
+  "info": {
+    "Author": "Nayamax",
+    "Name": "Nayamax classic",
+    "Version": "1.0.0"
+  },
+  "customizer": {
+
+    "sections": {
+
+      "Edition": {
+
+        "settings": {
+
+          "Site": {
+
+            "controls": {
+              "Logo image": {"type":"image","value":"","opt":[]}
+            }
+          },
+
+          "Reseaux sociaux": {
+
+            "controls": {
+
+              "Facebook": {"type":"text","value":"","opt":[]},
+              "Whatsapp": {"type":"text","value":"","opt":[]},
+              "Instagram": {"type":"text","value":"","opt":[]}
+            }
+          }
+        }
+      }
+    }
+
+  },
+  "afterstyle":{
+    "style":[
+      "assets/css/style.min.css"
+    ],
+    "script":[]
+  },
+  "afterscript":[
+    "assets/js/plugins.min.js",
+    "assets/js/main.min.js"
+  ]
+
+
+}

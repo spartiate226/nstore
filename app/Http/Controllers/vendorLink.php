@@ -7,6 +7,7 @@ use App\categorie;
 use App\commande;
 use App\module\setting;
 use App\produit;
+use App\retrait;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -87,8 +88,18 @@ class vendorLink extends Controller
             case "demande_retrait":
                 return view('dashboard.retrait.demande',compact('slug'));
                 break;
+            case "wallet":
+                return view('dashboard.retrait.wallet',compact('slug'));
+                break;
             case "historique_retrait":
-                return view('dashboard.retrait.historique',compact('slug'));
+                $retraits=retrait::where('boutique_id','=',Auth::user()->group->boutique->id)->paginate(10);
+                return view('dashboard.retrait.historique',compact('slug',"retraits"));
+                break;
+            case "nayamaxtheme":
+                return view('dashboard.theme.nayamaxtheme',compact('slug'));
+                break;
+            case "profile":
+                return view('dashboard.profile',compact('slug'));
                 break;
 
         }

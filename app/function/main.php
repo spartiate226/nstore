@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 
 function account(){
@@ -33,6 +34,16 @@ function getThemeDetail($path){
     ];
 }
 
+function MarketThemeDetail($path){
+    $config=json_decode(market_path()->get($path.'/config.json'));
+    return [
+        "image"=>Storage::disk("theme_market_path")->url($path.'/screenshot.png'),
+        "author"=>$config->info->Author,
+        "name"=>$config->info->Name,
+        "version"=>$config->info->Version
+    ];
+}
+
 function getfilename($path){
     $file=pathinfo($path);
     return $file['filename'];
@@ -41,6 +52,10 @@ function getfilename($path){
 function list_themes($store_id){
     return themes_path()->directories($store_id.'/themes');
 }
+function market_themes(){
+    return Storage::disk("theme_market_path")->directories('themes');
+}
+
 
 function market_path(){
    return Storage::disk('theme_market_path');
@@ -82,7 +97,7 @@ function controlBlock($control,$control_label,$setting_label,$section_label){
             break;
         case "image":
             ?>
-            <input id="<?php echo $section_label ?>trigrer" data-control="<?php echo $control_label ?>" value="<?php echo $control->value?>" data-setting="<?php echo $setting_label ?>" data-section="<?php echo $section_label ?>" class="mediaSelector form-control customizer-field" type="text" data-toggle="modal"  data-target="#<?php echo $section_label ?>target">
+            <input readonly id="<?php echo $section_label ?>trigrer" data-control="<?php echo $control_label ?>" value="<?php echo $control->value?>" data-setting="<?php echo $setting_label ?>" data-section="<?php echo $section_label ?>" class="mediaSelector form-control customizer-field" type="text" data-toggle="modal"  data-target="#<?php echo $section_label ?>target">
 
 
             <!-- Modal -->
@@ -121,13 +136,22 @@ function controlBlock($control,$control_label,$setting_label,$section_label){
             <?php
             foreach ($control->opt as $label=>$option){
                 ?>
-                <option value="<?php echo $option?>"><?php echo $label?></option>
+                <option value="<?php echo $option?>"><?php echo $option?></option>
         <?php
             }
             ?>
         </select>
 <?php
             break;
+        case "color":
+            ?>
+
+            <input data-control="<?php echo $control_label ?>" data-setting="<?php echo $setting_label ?>" data-section="<?php echo $section_label ?>" class="form-control customizer-field" type="color" value="<?php echo $control->value?>">
+        <?php
+            break;
+            ?>
+
+        <?php
         default:
 
             break;

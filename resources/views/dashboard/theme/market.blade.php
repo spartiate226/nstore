@@ -1,8 +1,9 @@
 @extends('dashboard.layout')
 @section('contenue')
     <div>
-        <button class="btn btn-warning">Telécharger plus de themes</button>
+        <a href="{{url('dashboard/nayamaxtheme')}}" class="btn btn-warning">Themes Nayamax</a>
     </div>
+    @include("alertpane")
     <div class="row mt-3">
         @foreach(list_themes(Auth::user()->boutique->id) as $theme)
             <section class="col-md-3 p-1">
@@ -13,8 +14,11 @@
                         <p>Par {{getThemeDetail($theme)['author']}}</p>
                     </div>
                     <section class="row">
-                        <div  class="col-6 p-1"><a @if(Auth::user()->boutique->template->template!=getThemeDetail($theme)['name']) href="{{url('dashboard/changeTheme',['template'=>getThemeDetail($theme)['name']])}}" @else style="background-color: rgba(0,0,0,0.3)" @endif  class="btn btn-success w-100">Activer</a></div>
-                        <div class="col-6 p-1"> <a href="" class="btn btn-danger w-100">Supprimer</a></div>
+                        <div  class="col-6 p-1"><a @if(Auth::user()->boutique->template->template!=basename($theme)) href="{{url('dashboard/changeTheme',['template'=>basename($theme)])}}" disabled @else style="background-color: rgba(0,0,0,0.3)" @endif  class="btn btn-success w-100">Activer</a></div>
+                        <form class="col-6 p-1" action="{{url('deltheme',[basename($theme)])}}" method="POST">
+                            @csrf
+                            <button class="btn btn-danger w-100" @if(Auth::user()->boutique->template->template==basename($theme))  disabled @endif>Supprimer</button>
+                        </form>
                     </section>
                 </div>
             </section>

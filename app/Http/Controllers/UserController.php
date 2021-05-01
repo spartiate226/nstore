@@ -102,9 +102,23 @@ class UserController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request)
     {
-        //
+        /*$request->validate([
+            "oldpass"=>'required',
+            "newpass"=>'required',
+            "email"=>'required',
+            "numero"=>'required',
+        ]);*/
+        $user=User::find($request->id);
+        if(Auth::validate(["pseudonyme"=>$user->pseudonyme,"password"=>$request->oldpass])){
+            $data=$request->except("oldpass","newpass");
+            $data['password']=Hash::make($request->newpass);
+            $user->update($data);
+            return redirect()->back()->with(["reponse"=>"Mise à jour réussi..."]);
+        }else{
+            return redirect()->back()->with(["erreur"=>"Ancien mot de passe incorect"]);
+        }
     }
 
     /**

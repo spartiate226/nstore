@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\boutique;
+use App\retrait;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class nymboardLink extends Controller
 {
@@ -44,10 +46,18 @@ class nymboardLink extends Controller
                 return view('nymBoard.profile');
                 break;
             case "demande_retrait":
-                return view('nymBoard.retrait.demande');
+                $retraits=retrait::paginate(10);
+                return view('nymBoard.retrait.demande',compact('retraits'));
                 break;
             case "historique_retrait":
-                return view('nymBoard.retrait.historique');
+                $retraits=retrait::paginate(10);
+                return view('nymBoard.retrait.historique',compact('retraits'));
+                break;
+            case "theme":
+                return view('nymBoard.theme');
+                break;
+            case "profile":
+                return view('nymBoard.profile');
                 break;
 
         }

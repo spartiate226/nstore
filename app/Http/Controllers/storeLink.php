@@ -30,7 +30,8 @@ class storeLink extends Controller
                 return view('front.frontpage',compact('store','that'));
                 break;
             case "category":
-                return view('front.category',compact('store','that'));
+                $catid=$params;
+                return view('front.category',compact('store','that',"catid"));
                 break;
             case "product":
                 return view('front.product',compact('store','that'));
@@ -57,6 +58,15 @@ class storeLink extends Controller
                 break;
             case "404":
                 return view('front.404',compact('store','that'));
+                break;
+            case "my-account":
+                return view('front.my-account',compact('store','that'));
+                break;
+            case "my-history":
+                return view('front.my-history',compact('store','that'));
+                break;
+            case "contact":
+                return view('front.contact',compact('store','that'));
                 break;
             default :
                 return view('front.404',compact('store','that'));

@@ -1,5 +1,3 @@
-
-
 @extends('front.layout')
 @section('contenu')
     @php

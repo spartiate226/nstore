@@ -48,12 +48,16 @@ class Store
     function getProduct($id){
         return produit::find($id);
     }
+    function getProductBy($id,$paginate=15){
+        return produit::where('categorie_id',"=",$id)->paginate($paginate);
+    }
     function category($id=null){
         if ($id==null){
-
             return categorie::where('boutique_id',"=",$this->boutique->id)->get();
         }
     }
+
+
     function filter($bycategorie,$byprice='',$bydate=''){
         categorie::find($bycategorie)->produits;
     }
@@ -163,5 +167,43 @@ class Store
 
     function controlervalue($control,$setting,$section){
         return $this->setting->control($control,$setting,$section)->value;
+    }
+
+    function toprated($number){
+
+    }
+    function featured($number){
+
+    }
+
+    function best_sales($number){
+
+    }
+    function new_product($number){
+        $prod=produit::where("boutique_id","=",$this->boutique->id)->orderby("created_at","desc")->paginate($number);
+        return $prod;
+    }
+
+    function promo($number){
+
+    }
+
+    function product_comments($product_id){
+        $produit=produit::find($product_id);
+        return $produit->comments->paginate(10);
+    }
+
+    function product_rates($product_id){
+        $produit=produit::find($product_id);
+        return $produit->rates->paginate(10);
+    }
+
+    function product_rates_average($product_id){
+        $produit=produit::find($product_id);
+        $somm=0;
+        /*foreach ($produit->rates as $rate){
+            $somm=$somm+$rate->note;
+        }*/
+        return 0;
     }
 }

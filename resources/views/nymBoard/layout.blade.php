@@ -17,17 +17,6 @@
                 </div>
             </div>
 
-            <!-- SidebarSearch Form -->
-            <div class="form-inline">
-                <div class="input-group" data-widget="sidebar-search">
-                    <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
-                    <div class="input-group-append">
-                        <button class="btn btn-sidebar">
-                            <i class="fas fa-search fa-fw"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
 
             <!-- Sidebar Menu -->
             <nav class="mt-2">
@@ -44,8 +33,17 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a href="{{url('nym/theme')}}" class="nav-link">
+                            <i class="nav-icon fa fa-file-alt"></i>
+                            <p>
+                                Themes
+                            </p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
                         <a href="{{url('nym/boutique')}}" class="nav-link">
-                            <i class="nav-icon fa fa-home"></i>
+                            <i class="nav-icon fa fa-store"></i>
                             <p>
                                 Boutiques
                             </p>
@@ -78,7 +76,7 @@
 
                     <li class="nav-item">
                         <a href="3" class="nav-link">
-                            <i class="nav-icon fas fa-money"></i>
+                            <i class="nav-icon fas fa-money-bill-alt"></i>
                             <p>
                                 Demandes de retraits
                                 <i class="fas fa-angle-left right"></i>
@@ -101,7 +99,7 @@
                     </li>
                     <li class="nav-item">
                         <a href="{{url('admin/logout')}}" class="nav-link">
-                            <i class="nav-icon fas fa-signout"></i>
+                            <i class="nav-icon fas fa-sign-out-alt"></i>
                             <p>
                                 Deconnexion
                             </p>

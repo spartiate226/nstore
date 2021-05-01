@@ -57,6 +57,9 @@ class livreurLink extends Controller
             case "historique_retrait":
                 return view('1livreur.retrait.historique');
                 break;
+            case "profile":
+                return view('1livreur.profile');
+                break;
         }
     }
 }

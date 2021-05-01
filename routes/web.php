@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 //Route::get('store/{slug}/{page?}','boutiqueController@boutique');
 
 
-Route::group(['domain'=>'user.{loginpseudo}.mynayamax.test'],function(){
+Route::group(['domain'=>'user.{loginpseudo}.mynayamax.com'],function(){
 
     Route::middleware(["isnayamax"])->group(function (){
         Route::get('/',function (){
@@ -25,10 +25,8 @@ Route::group(['domain'=>'user.{loginpseudo}.mynayamax.test'],function(){
         Route::get('admin/login',"Logincontroller@vue");
         Route::post('admin/login',"Logincontroller@login");
         Route::get('admin/logout',"Logincontroller@logout");
-
-
-
-        Route::post('upload','boutiqueController@loadmedia');
+        Route::post('updatecompte',"UserController@update")->middleware('auth');
+        Route::post('addTheme',"boutiqueController@upload_theme_to_market")->middleware('Roleverifier:1');
         Route::post('addUser/{role}','UserController@store');
         Route::post('addBoutique',"boutiqueController@addBoutique")->middleware('Roleverifier:1');
         Route::post('addpack',"packController@addpack")->middleware('Roleverifier:1');
@@ -63,12 +61,12 @@ Route::group(['domain'=>'user.{loginpseudo}.mynayamax.test'],function(){
 
 
 
-Route::group(['domain'=>'{slug}.mynayamax.test'],function(){
+Route::group(['domain'=>'{slug}.mynayamax.com'],function(){
 
 
     Route::middleware(["isshop"])->group(function (){
 
-        Route::get('/admin/{pseudo}',function ($slug,$pseudo){
+        Route::get('/panel/{pseudo}',function ($slug,$pseudo){
             $user=User::where("pseudonyme","=",$pseudo)->first();
             if ($user==null){
                 abort(403);
@@ -76,6 +74,12 @@ Route::group(['domain'=>'{slug}.mynayamax.test'],function(){
                 return redirect("admin/login");
             }
         });
+        Route::post('deltheme/{theme}','boutiqueController@deltheme');
+        Route::post('retraitAsk','paiement\retraitController@fromBoutique');
+        Route::post('updatecompte',"UserController@update")->middleware('auth');
+        Route::get('theme_download/{theme}','boutiqueController@theme_download');
+        Route::post('upload','boutiqueController@loadmedia');
+        Route::post('delmedia','boutiqueController@delmedia');
         Route::get('admin/login',"VendorLoginController@vendorvue");
         Route::post('admin/login',"VendorLoginController@vendorlogin");
         Route::get('admin/logout',"VendorLoginController@vendorlogout");
@@ -87,7 +91,9 @@ Route::group(['domain'=>'{slug}.mynayamax.test'],function(){
         Route::post('client/register','StoreAuthcontroller@register');
         Route::get('client/logout','StoreAuthcontroller@logout');
 
-
+        Route::get('produpdate/{prod}',"boutiqueController@prodUpdateView");
+        Route::post('produpdate/{prod}',"boutiqueController@prodUpdate");
+        Route::post('delprod',"boutiqueController@delprod");
         Route::post('dashboard/customizer','customizerController@customizer');
         Route::resource('dashboard/categorie','categoriecontroller')->middleware('Roleverifiervendor');
         Route::resource('dashboard/produit','produitcontroller')->middleware('Roleverifiervendor');
@@ -113,9 +119,7 @@ Route::group(['domain'=>'{slug}.mynayamax.test'],function(){
 
 
 
-Route::get('/', function () {
-    return view('front.location');
-});
+
 
 
 

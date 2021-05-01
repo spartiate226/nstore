@@ -20,4 +20,14 @@ class boutique extends Model
     function commande(){
         return $this->hasMany(commande::class);
     }
+
+    function storepacks(){
+        return $this->hasMany(storepack::class);
+    }
+    function retraits(){
+        return $this->hasMany(retrait::class);
+    }
+    function portefeuille(){
+        return $this->hasOne(portefeuille::class);
+    }
 }

@@ -46,4 +46,11 @@ class User extends Authenticatable
   function zone(){
     return $this->belongsTo(zone::class);
   }
+
+    function comments(){
+        return $this->hasMany(product_comment::class);
+    }
+    function rates(){
+        return $this->hasMany(product_rate::class);
+    }
 }

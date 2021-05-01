@@ -17,17 +17,7 @@
                 </div>
             </div>
 
-            <!-- SidebarSearch Form -->
-            <div class="form-inline">
-                <div class="input-group" data-widget="sidebar-search">
-                    <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
-                    <div class="input-group-append">
-                        <button class="btn btn-sidebar">
-                            <i class="fas fa-search fa-fw"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
+
 
             <!-- Sidebar Menu -->
             <nav class="mt-2">
@@ -43,6 +33,16 @@
                             </p>
                         </a>
                     </li>
+
+                    <li class="nav-item">
+                        <a href="{{url('dashboard/phototeque')}}" class="nav-link">
+                            <i class="nav-icon fa fa-film"></i>
+                            <p style="font-weight:bold">
+                                Media
+                            </p>
+                        </a>
+                    </li>
+
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-copy"></i>
@@ -105,7 +105,7 @@
                     <li class="nav-item">
                         <a href="{{url('dashboard/')}}" class="nav-link">
                             <i class="nav-icon fas fa-edit"></i>
-                            <p>
+                            <p style="font-weight:bold">
                                 Apparences
                                 <i class="fas fa-angle-left right"></i>
                             </p>
@@ -131,43 +131,22 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item">
-                        <a href="{{url('dashboard/phototeque')}}" class="nav-link">
-                            <i class="nav-icon fa fa-film"></i>
-                            <p>
-                                Media
-                            </p>
-                        </a>
-                    </li>
+
+
 
                     <li class="nav-item">
-                        <a href="3" class="nav-link">
-                            <i class="nav-icon fas fa-money"></i>
-                            <p>
-                                Retraits
-                                <i class="fas fa-angle-left right"></i>
+                        <a href="{{url('dashboard/wallet')}}" class="nav-link">
+                            <i class="nav-icon fa fa-money-bill"></i>
+                            <p style="font-weight:bold">
+                                Portefeuille
                             </p>
                         </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="{{url('dashboard/demande_retrait')}}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Faire un retrait</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{url('dashboard/historique_retrait')}}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Historiques</p>
-                                </a>
-                            </li>
-                        </ul>
                     </li>
 
                     <li class="nav-item">
                         <a href="{{url('admin/logout')}}" class="nav-link">
                             <i class="nav-icon fas fa-sign-out-alt"></i>
-                            <p>
+                            <p style="font-weight:bold">
                                 Deconnexion
                             </p>
                         </a>
