@@ -2,9 +2,11 @@
 
 namespace App\Providers;
 
+use App\Events\onBoutiquecreate;
 use App\Events\onportefeuillechange;
 use App\Events\onretraitStatechange;
 use App\Events\ontransaction;
+use App\Listeners\onBoutiquecreateListener;
 use App\Listeners\onportefeuillechangeListener;
 use App\Listeners\onretraitStatechangeListener;
 use App\Listeners\ontransactionListener;
@@ -33,6 +35,9 @@ class EventServiceProvider extends ServiceProvider
         onportefeuillechange::class=>[
             onportefeuillechangeListener::class,
         ],
+        onBoutiquecreate::class=>[
+            onBoutiquecreateListener::class
+        ]
     ];
 
     /**

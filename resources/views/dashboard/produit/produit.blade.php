@@ -41,6 +41,7 @@
                             <tr>
                                 <th></th>
 {{--                                <th>Vendeur</th>--}}
+                                <th>id</th>
                                 <th>Nom</th>
                                 <th>Categorie</th>
                                 <th>Prix</th>
@@ -59,6 +60,7 @@
                                     </div>
                                 </td>
 {{--                                <td class="mailbox-star"></td>--}}
+                                <td class="mailbox-name">{{$produit->id}}</td>
                                 <td class="mailbox-name">{{$produit->nom}}</td>
                                 <td class="mailbox-subject">{{$produit->categorie->nom}}</td>
                                 <td class="mailbox-attachment">{{$produit->prix}} Fcfa</td>

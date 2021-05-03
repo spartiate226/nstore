@@ -65,7 +65,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{url('dashboard/commande')}}" class="nav-link">
+                                <a href="{{--url('dashboard/commande')--}}#" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p style="font-weight:bold">commandes</p>
                                 </a>
@@ -95,7 +95,7 @@
                             {{--                    </a>--}}
                             {{--                </li>--}}
                             <li class="nav-item">
-                                <a href="{{url('dashboard/user')}}" class="nav-link">
+                                <a href="{{--url('dashboard/user')--}}#" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Membres</p>
                                 </a>
@@ -135,7 +135,7 @@
 
 
                     <li class="nav-item">
-                        <a href="{{url('dashboard/wallet')}}" class="nav-link">
+                        <a href="{{--url('dashboard/wallet')--}}#" class="nav-link">
                             <i class="nav-icon fa fa-money-bill"></i>
                             <p style="font-weight:bold">
                                 Portefeuille

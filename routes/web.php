@@ -123,3 +123,5 @@ Route::group(['domain'=>'{slug}.mynayamax.com'],function(){
 
 
 
+
+

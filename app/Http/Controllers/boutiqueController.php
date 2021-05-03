@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\boutique;
 use App\boutiqueAnnexe;
+use App\Events\onBoutiquecreate;
 use App\Events\onportefeuillechange;
 use App\Http\Requests\ProduitRequest;
 use App\portefeuille;
@@ -27,6 +28,7 @@ class boutiqueController extends Controller
 
     }
     function addBoutique(Request $request){
+        $content=[];
         $donneB=$request->except(['nom','_token','prenom','email','numero','pseudonyme']);
         $donneP=$request->except(['bnom','_token','tel1','tel2','pack_id','slug','quartier_id']);
         $donneP['role_id']=3;
@@ -52,7 +54,7 @@ class boutiqueController extends Controller
 
                 event(new onportefeuillechange($portefeuille));
 
-                $pass="password";
+                $pass=Str::random(8);
                 $proprietaire->update([
                     "storegroup_id"=>$group->id,
                     "password"=>Hash::make($pass),
@@ -68,6 +70,17 @@ class boutiqueController extends Controller
                     ]);
                     themes_path()->copy($boutique->id.'/themes/classic/config.json',$boutique->id.'/themes/classic/configCopy.json');
                 }
+                $content=[
+                    "mailto"=>$request->email,
+                    "password"=>$pass,
+                    "nom"=>$request->nom,
+                    "prenom"=>$request->prenom,
+                    "slug"=>$request->slug,
+                    "pseudonyme"=>$request->pseudonyme,
+                ];
+
+
+                event(new onBoutiquecreate($content));
             }else{
                 return redirect('nym/boutique')->with(['reponse'=>"Erreur lors de l'enregistrement"]);
             }

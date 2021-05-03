@@ -51,7 +51,7 @@
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item d-none d-sm-inline-block" style="color: #002a54;font-weight:bold">
-                <a href="index3.html" class="nav-link">Mon site</a>
+                <a href="https://{{Auth::user()->group->boutique->slug ?? ""}}mynayamax.com" class="nav-link">Mon site</a>
             </li>
         </ul>
 
