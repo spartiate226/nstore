@@ -11,8 +11,8 @@
 
     <h4>Liens :</h4>
     <ul>
-        <li>Administrateur : <a href="https://{{$content['slug']}}.mynayamax.com/panel/">https://.mynayamax.com/panel/{{$content['pseudonyme']}}</a></li>
-        <li>Boutique :<a href="https://{{$content['slug']}}.mynayamax.com">https://.mynayamax.com</a></li>
+        <li>Administrateur : <a href="{{'https://'.$content['slug']}}.mynayamax.com/panel/">https://.mynayamax.com/panel/{{$content['pseudonyme']}}</a></li>
+        <li>Boutique :<a href="{{'https://'.$content['slug']}}.mynayamax.com">https://.mynayamax.com</a></li>
     </ul>
     <h4 style="margin-top: 15px">Merci pour votre confiance...</h4>
 </div>

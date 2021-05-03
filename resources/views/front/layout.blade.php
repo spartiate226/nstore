@@ -1,6 +1,7 @@
 <!Doctype html>
 <html class="h-100">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{$that->slug}}</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">

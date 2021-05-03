@@ -9,7 +9,7 @@
                     <!-- small box -->
                     <div class="small-box bg-info">
                         <div class="inner">
-                            <h3>150</h3>
+                            <h3>{{count(\App\commande::where('boutique_id','=',Auth::user()->group->boutique->id)->get())}}</h3>
 
                             <p>Commandes</p>
                         </div>
@@ -23,7 +23,7 @@
                     <!-- small box -->
                     <div class="small-box bg-success">
                         <div class="inner">
-                            <h3>5000000FCFA</h3>
+                            <h3>{{Auth::user()->group->boutique->portefeuille->montant}} FCFA</h3>
 
                             <p>Gain</p>
                         </div>
@@ -37,7 +37,7 @@
                     <!-- small box -->
                     <div class="small-box bg-warning">
                         <div class="inner">
-                            <h3>44</h3>
+                            <h3>0</h3>
 
                             <p>Inscriptions</p>
                         </div>
@@ -48,7 +48,7 @@
                     <!-- small box -->
                     <div class="small-box bg-danger">
                         <div class="inner">
-                            <h3>65</h3>
+                            <h3>{{count(\App\produit::where('boutique_id','=',Auth::user()->group->boutique->id)->get())}}</h3>
 
                             <p>Produits</p>
                         </div>
