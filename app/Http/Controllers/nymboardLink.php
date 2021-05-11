@@ -59,6 +59,9 @@ class nymboardLink extends Controller
             case "profile":
                 return view('nymBoard.profile');
                 break;
+            case "demandeboutique":
+                return view('nymBoard.demandeboutique');
+                break;
 
         }
     }

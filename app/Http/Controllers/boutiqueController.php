@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\boutique;
 use App\boutiqueAnnexe;
+use App\demande_boutique;
 use App\Events\onBoutiquecreate;
 use App\Events\onportefeuillechange;
 use App\Http\Requests\ProduitRequest;
@@ -25,7 +26,7 @@ class boutiqueController extends Controller
 
     public function __construct()
     {
-
+     $this->middleware("auth")->except(["demande"]);
     }
     function addBoutique(Request $request){
         $content=[];
@@ -174,5 +175,18 @@ class boutiqueController extends Controller
          $donn['boutique_id']=Auth::user()->group->boutique->id;
          boutiqueAnnexe::create($donn);
          return redirect('dashboard/dash');
+     }
+     function delboutique($id){
+        $boutique=boutique::find($id);
+        $group=$boutique->group;
+     }
+
+     function demande(Request $request){
+        $data=$request->all();
+        demande_boutique::create($data);
+        return redirect('/')->with(["reponse"=>"Votre demande à été envoyer.Nous vous contacterons pour le processus d'ouverture"]);
+     }
+     function RejetDemande($id){
+
      }
 }

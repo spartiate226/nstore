@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 //Route::get('store/{slug}/{page?}','boutiqueController@boutique');
 
 
-Route::group(['domain'=>'user.{loginpseudo}.mynayamax.com'],function(){
+Route::group(['domain'=>'user.{loginpseudo}.mynayamax.test'],function(){
 
     Route::middleware(["isnayamax"])->group(function (){
         Route::get('/',function (){
@@ -61,7 +61,7 @@ Route::group(['domain'=>'user.{loginpseudo}.mynayamax.com'],function(){
 
 
 
-Route::group(['domain'=>'{slug}.mynayamax.com'],function(){
+Route::group(['domain'=>'{slug}.mynayamax.test'],function(){
 
 
     Route::middleware(["isshop"])->group(function (){
@@ -116,6 +116,8 @@ Route::group(['domain'=>'{slug}.mynayamax.com'],function(){
 
     });
 });
+
+Route::view("/","landing");
 
 
 

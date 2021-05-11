@@ -4,7 +4,7 @@
 <form class="" action="{{url('commande/place')}}" method="POST">
     @csrf
     <section class="bg-dark">
-        <h2 class="checkout-title text-center p-3"><span class="text-light">NAYA</span><span class="text-warning">MAX</span>  <span class="text-light">Checkout</span></h1>
+        <h2 class="checkout-title text-center p-3"><span class="text-light">NAYA</span><span class="text-warning">MAX</span>  <span class="text-light">Checkout</span></h2>
     </section>
     <div class="container">
         <section class="row">
@@ -78,7 +78,7 @@
                 </section>
 
                 <section class="mt-5">
-                    <button class="btn btn-secondary w-100 d-block mb-5">Commander</button>
+                    <button type="button" class="btn btn-secondary w-100 d-block mb-5">Commander</button>
                 </section>
                 </div>
             </div>
