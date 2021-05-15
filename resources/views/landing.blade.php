@@ -209,12 +209,12 @@
                                 <div class="col-12 col-lg-4 mb-4 mb-lg-0 animated" data-animation="fadeInUp" data-animation-delay="600">
                                     <div class="feature-block">
                                         <div class="feature-icon icon-lg mb-4">
-                                            <div class="text-sm-center">
+                                            <div class="">
                                                 <i class="fas fa-store text-warning"></i>
                                             </div>
                                         </div>
                                         <div class="feature-content">
-                                            <h4 class="text-sm-center">Boutique en ligne</h4>
+                                            <h4 class="">Boutique en ligne</h4>
                                             <p>Créez une boutique de ecommerce instannanément,grâce à notre solution Mynayamax et profitez d'un suivi particulier</p>
                                         </div>
                                     </div>
@@ -222,25 +222,25 @@
                                 <div class="col-12 col-lg-4 mb-lg-0 animated" data-animation="fadeInUp" data-animation-delay="800">
                                     <div class="feature-block">
                                         <div class="feature-icon icon-lg mb-4">
-                                            <div class="text-sm-center">
+                                            <div class="">
                                                 <i class="fas fa-book text-warning"></i>
                                             </div>
                                         </div>
-                                        <div class="feature-content text-sm-center">
+                                        <div class="feature-content ">
                                             <h4 class="">Formations</h4>
-                                            <p>Recevez des formations AU Cmpus nayamax et optimisez vos chances de succès.</p>
+                                            <p>Recevez des formations au campus nayamax et optimisez vos chances de succès.</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-12 col-lg-4 animated" data-animation="fadeInUp" data-animation-delay="1000">
                                     <div class="feature-block">
                                         <div class="feature-icon icon-lg mb-4">
-                                            <div class="text-sm-center">
+                                            <div class="">
                                                 <i class="fas fa-truck-moving text-warning"></i>
                                             </div>
                                         </div>
                                         <div class="feature-content">
-                                            <h4 class="text-sm-center">Gestion de stock et logistique</h4>
+                                            <h4 class="">Gestion de stock et logistique</h4>
                                             <p>Stockez vo produits dans nos magasins; vendez les via votre boutique en ligne et nous gerons l'aspect logistique avec notre solution 1Livreur.</p>
                                         </div>
                                     </div>
