@@ -209,39 +209,39 @@
                                 <div class="col-12 col-lg-4 mb-4 mb-lg-0 animated" data-animation="fadeInUp" data-animation-delay="600">
                                     <div class="feature-block">
                                         <div class="feature-icon icon-lg mb-4">
-                                            <div>
-                                                <i class="fas fa-store"></i>
+                                            <div class="text-sm-center">
+                                                <i class="fas fa-store text-warning"></i>
                                             </div>
                                         </div>
                                         <div class="feature-content">
-                                            <h4>Boutique en ligne</h4>
-                                            <p>Creez une boutique ecommerce instannanement,grace à notre solution nayamaxstore et profiter d'un suivie particulier</p>
+                                            <h4 class="text-sm-center">Boutique en ligne</h4>
+                                            <p>Créez une boutique de ecommerce instannanément,grâce à notre solution Mynayamax et profitez d'un suivi particulier</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-12 col-lg-4 mb-lg-0 animated" data-animation="fadeInUp" data-animation-delay="800">
                                     <div class="feature-block">
                                         <div class="feature-icon icon-lg mb-4">
-                                            <div>
-                                                <i class="fas fa-book"></i>
+                                            <div class="text-sm-center">
+                                                <i class="fas fa-book text-warning"></i>
                                             </div>
                                         </div>
-                                        <div class="feature-content">
-                                            <h4>Formations</h4>
-                                            <p>Recevez des formations et devenez le ecommerçant du siècle</p>
+                                        <div class="feature-content text-sm-center">
+                                            <h4 class="">Formations</h4>
+                                            <p>Recevez des formations AU Cmpus nayamax et optimisez vos chances de succès.</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-12 col-lg-4 animated" data-animation="fadeInUp" data-animation-delay="1000">
                                     <div class="feature-block">
                                         <div class="feature-icon icon-lg mb-4">
-                                            <div>
-                                                <i class="fas fa-truck-moving"></i>
+                                            <div class="text-sm-center">
+                                                <i class="fas fa-truck-moving text-warning"></i>
                                             </div>
                                         </div>
                                         <div class="feature-content">
-                                            <h4>Gestion de stock et logistique</h4>
-                                            <p>Creer vos produit dans votre boutique en ligne et nous gerons la livraison pour vous grace a la solution 1Livreur</p>
+                                            <h4 class="text-sm-center">Gestion de stock et logistique</h4>
+                                            <p>Stockez vo produits dans nos magasins; vendez les via votre boutique en ligne et nous gerons l'aspect logistique avec notre solution 1Livreur.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -260,13 +260,13 @@
                         <div class="col-12 col-lg-8 mx-lg-auto">
                             <h2 class="text-center animated text-warning" data-animation="fadeInUp">Contactez nous</h2>
                             <div class="divider divider-alt bg-white mx-auto animated" data-animation="fadeInUp" data-animation-delay="200"></div>
-                            <p class="text-center animated" data-animation="fadeInUp" data-animation-delay="400">Voulez vous nous dire bonjour?Besoin d'en savoir plus?Appelez nous...</p>
+                            <p class="text-center animated" data-animation="fadeInUp" data-animation-delay="400">Besoin d'en savoir plus?Appelez nous...</p>
                         </div>
                     </div>
                     <div class="row animated" data-animation="fadeInUp" data-animation-delay="600">
                         <div class="col-12 col-lg-10 mx-lg-auto row justify-content-center">
                             <div class="col-md-6">
-                                <h1><i class="fab fa-phone"></i>+226 68 57 05 05</h1>
+                                <h1 class="text-center"><i class="fab fa-phone-alt"></i>+226 68 67 05 05</h1>
                             </div>
                         </div>
                     </div>
@@ -280,25 +280,22 @@
         <nav class="social-nav">
             <ul>
                 <li class="animated" data-animation="fadeInRightBig" data-animation-delay="800">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://facebook.com/groupenayamax/"><i class="fab fa-facebook-f"></i></a>
                 </li>
                 <li class="animated" data-animation="fadeInRightBig" data-animation-delay="950">
-                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://wa.me/message/6BI7XUJ7KUHZO1"><i class="fab fa-whatsapp"></i></a>
                 </li>
                 <li class="animated" data-animation="fadeInRightBig" data-animation-delay="1100">
-                    <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="https://www.instagram.com/invites/contact/?i=ehp9nkqvwigj&utm_content=m1yqhqr"><i class="fab fa-instagram"></i></a>
                 </li>
                 <li class="animated" data-animation="fadeInRightBig" data-animation-delay="1250">
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                </li>
-                <li class="animated" data-animation="fadeInRightBig" data-animation-delay="1400">
-                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.linkedin.com/company/nayamax"><i class="fab fa-linkedin-in"></i></a>
                 </li>
             </ul>
         </nav>
-        <div class="copyright">
+        <div class="copyright text-sm-center">
             <div class="container-fluid">
-                <p>© {{date("Y")}} <span>Naya</span>Max<span></span> - All Rights Reserved</p>
+                <p class="">© {{date("Y")}} <span>Naya</span>Max<span></span> - All Rights Reserved</p>
             </div>
         </div>
     </footer>

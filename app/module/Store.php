@@ -54,7 +54,10 @@ class Store
     function category($id=null){
         if ($id==null){
             return categorie::where('boutique_id',"=",$this->boutique->id)->get();
+        }else{
+           return categorie::find($id);
         }
+        return null;
     }
 
 
