@@ -46,6 +46,10 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
+        'onelivreur' => [
+            'driver' => 'session',
+            'provider' => 'clientoneL',
+        ],
     ],
 
     /*
@@ -69,6 +73,10 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
+        ],
+        'clientoneL' => [
+            'driver' => 'eloquent',
+            'model' => App\onelivreurClient::class,
         ],
 
         // 'users' => [

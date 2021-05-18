@@ -15,13 +15,14 @@ class ClientApiController extends Controller
 {
     function signup(Request $request){
         $donne=$request->all();
+        $donne['password']=Hash::make($donne['password']);
         $donne['api_token']=Str::random(100);
         $client=onelivreurClient::create($donne);
         return Response()->json(["token"=>$client->api_token]);
     }
     function login(Request $request){
-        if (Auth::attempt(['identifiant' => $request->identifiant])) {
-            return onelivreurClient::where("identifiant","=",$request->identifiant)->get()[0];
+        if (Auth::guard('onelivreur')->attempt(['pseudonyme' => $request->pseudonyme,'password' => $request->password])) {
+            return Auth::guard('onelivreur')->user();
         }else{
             return Response()->json(["auth"=>"false"]);
         }

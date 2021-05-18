@@ -2,10 +2,13 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
 
-class onelivreurClient extends Model
+
+use Illuminate\Foundation\Auth\User as Authenticatable;
+
+class onelivreurClient extends Authenticatable
 {
+    protected  $fillable=["pseudonyme","password","api_token"];
     function Lieu(){
         return $this->hasMany(onelivreurLocation::class);
     }

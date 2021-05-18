@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/font-awesome/css/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/ionicon/css/ionicons.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/elegantIcon/legant.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/stylecust.css')}}">
     {{$that->Topcss()}}
     {{$that->Topjs()}}

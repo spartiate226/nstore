@@ -215,7 +215,7 @@
                                         </div>
                                         <div class="feature-content">
                                             <h4 class="">Boutique en ligne</h4>
-                                            <p>Créez une boutique de ecommerce instannanément,grâce à notre solution Mynayamax et profitez d'un suivi particulier</p>
+                                            <p>Créez une boutique de ecommerce instantanément,grâce à notre solution Mynayamax et profitez d'un suivi particulier</p>
                                         </div>
                                     </div>
                                 </div>
